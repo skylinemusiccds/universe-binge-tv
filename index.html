@@ -232,7 +232,7 @@
         <button id="loadMoreBtn" class="load-more-btn">Load More</button>
     </div>
     <script>
-        fetch("static/data/playlist.json")
+        fetch("https://channels-json.deno.dev/playlist.json")
             .then(response => response.json())
             .then(playlist => {
                 const playlistDiv = document.getElementById("playlist");
