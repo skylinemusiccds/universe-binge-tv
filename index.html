@@ -1,1221 +1,322 @@
+
 <!DOCTYPE html>
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width"><title>https://mavenarts.in/cinemadtv/play.php</title><link rel="stylesheet" type="text/css" href="resource://content-accessible/viewsource.css"></head><body id="viewsource" class="wrap highlight" style="tab-size: 4"><pre id="line1"><span></span><span class="doctype">&lt;!DOCTYPE html&gt;</span><span>
-<span id="line2"></span></span><span>&lt;<span class="start-tag">html</span> <span class="attribute-name">lang</span>="<a class="attribute-value">en</a>"&gt;</span><span>
-<span id="line3"></span>  </span><span>&lt;<span class="start-tag">head</span>&gt;</span><span>
-<span id="line4"></span>    </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">charset</span>="<a class="attribute-value">UTF-8</a>" <span>/</span>&gt;</span><span>
-<span id="line5"></span>    </span><span>&lt;<span class="start-tag">title</span>&gt;</span><span>Player</span><span>&lt;/<span class="end-tag">title</span>&gt;</span><span>
-<span id="line6"></span>    </span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
-<span id="line7"></span>  if (confirm("Join Our Telegram Channel @cinemadhd")) {
-<span id="line8"></span>    window.location.href = "https://t.me/cinemadhd";
-<span id="line9"></span>  }
-<span id="line10"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line11"></span>        </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">9475f2dbe451270d183769ea003da792ff72cbc2</a>" <span class="attribute-name">content</span>="<a class="attribute-value">9475f2dbe451270d183769ea003da792ff72cbc2</a>" <span>/</span>&gt;</span><span>
-<span id="line12"></span>
-<span id="line13"></span>    </span><span>&lt;<span class="start-tag">style</span>&gt;</span><span>
-<span id="line14"></span>    @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&amp;display=swap");
-<span id="line15"></span>    :root {
-<span id="line16"></span>      --bg-red: #e50914;
-<span id="line17"></span>      --bg-white: #f7f7f7;
-<span id="line18"></span>      --bg-black: #181919;
-<span id="line19"></span>    }
-<span id="line20"></span>    /* RESET CSS */
-<span id="line21"></span>    *,
-<span id="line22"></span>    *::before,
-<span id="line23"></span>    *::after {
-<span id="line24"></span>      margin: 0;
-<span id="line25"></span>      padding: 0;
-<span id="line26"></span>      box-sizing: inherit;
-<span id="line27"></span>    }
-<span id="line28"></span>
-<span id="line29"></span>    html {
-<span id="line30"></span>      box-sizing: border-box;
-<span id="line31"></span>      font-size: 62.5%;
-<span id="line32"></span>    }
-<span id="line33"></span>
-<span id="line34"></span>    /* ADBlock Modal */
-<span id="line35"></span>    .modal {
-<span id="line36"></span>      display: none;
-<span id="line37"></span>      justify-content: center;
-<span id="line38"></span>      align-items: center;
-<span id="line39"></span>      position: absolute;
-<span id="line40"></span>      width: 100vw;
-<span id="line41"></span>      height: 100vh;
-<span id="line42"></span>      background-color: rgba(0, 0, 0, 0.85);
-<span id="line43"></span>      z-index: 999;
-<span id="line44"></span>      font-family: "Rubik", Arial, sans-serif;
-<span id="line45"></span>    }
-<span id="line46"></span>
-<span id="line47"></span>    .modal .modal-container {
-<span id="line48"></span>      width: 60rem;
-<span id="line49"></span>      padding-bottom: 10rem;
-<span id="line50"></span>      background-color: var(--bg-black);
-<span id="line51"></span>      color: var(--bg-white);
-<span id="line52"></span>      border-radius: 0.3rem;
-<span id="line53"></span>    }
-<span id="line54"></span>
-<span id="line55"></span>    .modal .modal-container .modal-header {
-<span id="line56"></span>      position: relative;
-<span id="line57"></span>      border-radius: 0.3rem;
-<span id="line58"></span>      height: 30rem;
-<span id="line59"></span>    }
-<span id="line60"></span>
-<span id="line61"></span>    .modal .modal-container .modal-header strong {
-<span id="line62"></span>      position: absolute;
-<span id="line63"></span>      text-align: center;
-<span id="line64"></span>      top: 12rem;
-<span id="line65"></span>      bottom: 0;
-<span id="line66"></span>      left: 0;
-<span id="line67"></span>      right: 0;
-<span id="line68"></span>      font-weight: 700;
-<span id="line69"></span>      font-size: 2rem;
-<span id="line70"></span>      color: var(--bg-white);
-<span id="line71"></span>    }
-<span id="line72"></span>
-<span id="line73"></span>    .modal .modal-container .modal-header::before {
-<span id="line74"></span>      top: 0;
-<span id="line75"></span>      left: 0;
-<span id="line76"></span>      content: "";
-<span id="line77"></span>      width: 100%;
-<span id="line78"></span>      height: 100%;
-<span id="line79"></span>      position: absolute;
-<span id="line80"></span>      background: linear-gradient(
-<span id="line81"></span>        0deg,
-<span id="line82"></span>        var(--bg-black),
-<span id="line83"></span>        rgba(24, 25, 25, 0.3) 150%
-<span id="line84"></span>      );
-<span id="line85"></span>      border-radius: 0.3rem 0.3rem 0 0;
-<span id="line86"></span>    }
-<span id="line87"></span>
-<span id="line88"></span>    .modal .modal-container .modal-header::after {
-<span id="line89"></span>      top: 0;
-<span id="line90"></span>      left: 0;
-<span id="line91"></span>      content: "";
-<span id="line92"></span>      width: 100%;
-<span id="line93"></span>      height: 100%;
-<span id="line94"></span>      position: absolute;
-<span id="line95"></span>      background: linear-gradient(
-<span id="line96"></span>        0deg,
-<span id="line97"></span>        var(--bg-black),
-<span id="line98"></span>        rgba(24, 25, 25, 0.3) 100%
-<span id="line99"></span>      );
-<span id="line100"></span>      border-radius: 0.3rem 0.3rem 0 0;
-<span id="line101"></span>    }
-<span id="line102"></span>
-<span id="line103"></span>    .modal .modal-container .modal-header .backdrop {
-<span id="line104"></span>      width: 100%;
-<span id="line105"></span>      height: 30rem;
-<span id="line106"></span>      border-radius: 0.3rem 0.3rem 0 0;
-<span id="line107"></span>    }
-<span id="line108"></span>
-<span id="line109"></span>    .modal .modal-container .modal-header button {
-<span id="line110"></span>      display: flex;
-<span id="line111"></span>      justify-content: center;
-<span id="line112"></span>      align-items: center;
-<span id="line113"></span>      position: absolute;
-<span id="line114"></span>      top: 15px;
-<span id="line115"></span>      right: 15px;
-<span id="line116"></span>      width: 3.6rem;
-<span id="line117"></span>      height: 3.6rem;
-<span id="line118"></span>      background: var(--bg-black);
-<span id="line119"></span>      border: 0;
-<span id="line120"></span>      border-radius: 100%;
-<span id="line121"></span>      cursor: pointer;
-<span id="line122"></span>      transition: opacity 0.2s ease-in-out;
-<span id="line123"></span>      z-index: 999;
-<span id="line124"></span>    }
-<span id="line125"></span>
-<span id="line126"></span>    .modal .modal-container .modal-header button:hover {
-<span id="line127"></span>      opacity: 0.75;
-<span id="line128"></span>    }
-<span id="line129"></span>
-<span id="line130"></span>    .modal .modal-container .modal-header button img {
-<span id="line131"></span>      display: block;
-<span id="line132"></span>      width: 2.7rem;
-<span id="line133"></span>    }
-<span id="line134"></span>
-<span id="line135"></span>    .modal .modal-container .modal-body {
-<span id="line136"></span>      max-width: 50rem;
-<span id="line137"></span>      margin: 0 auto;
-<span id="line138"></span>      border-radius: 0 0 0.3rem 0.3rem;
-<span id="line139"></span>    }
-<span id="line140"></span>
-<span id="line141"></span>    .modal .modal-container .modal-body span {
-<span id="line142"></span>      font-family: Arial, Helvetica, sans-serif;
-<span id="line143"></span>      font-size: 1.7rem;
-<span id="line144"></span>    }
-<span id="line145"></span>
-<span id="line146"></span>    /* Skin Netflix CSS */
-<span id="line147"></span>    .jwplayer.jw-skin-netflix .jw-title-primary {
-<span id="line148"></span>      display: -webkit-box;
-<span id="line149"></span>      display: -ms-flexbox;
-<span id="line150"></span>      display: flex;
-<span id="line151"></span>      -webkit-box-pack: start;
-<span id="line152"></span>      -ms-flex-pack: start;
-<span id="line153"></span>      justify-content: flex-start;
-<span id="line154"></span>      -webkit-box-orient: vertical;
-<span id="line155"></span>      -webkit-box-direction: normal;
-<span id="line156"></span>      -ms-flex-direction: column;
-<span id="line157"></span>      flex-direction: column;
-<span id="line158"></span>      color: var(--bg-white);
-<span id="line159"></span>      margin: 5rem 0 0 5rem;
-<span id="line160"></span>      font-family: "Rubik", Arial, sans-serif;
-<span id="line161"></span>      font-weight: 700;
-<span id="line162"></span>      text-transform: uppercase;
-<span id="line163"></span>    }
-<span id="line164"></span>
-<span id="line165"></span>    .jwplayer.jw-skin-netflix .jw-title-secondary {
-<span id="line166"></span>      display: -webkit-box;
-<span id="line167"></span>      display: -ms-flexbox;
-<span id="line168"></span>      display: flex;
-<span id="line169"></span>      -webkit-box-pack: start;
-<span id="line170"></span>      -ms-flex-pack: start;
-<span id="line171"></span>      justify-content: flex-start;
-<span id="line172"></span>      -webkit-box-orient: vertical;
-<span id="line173"></span>      -webkit-box-direction: normal;
-<span id="line174"></span>      -ms-flex-direction: column;
-<span id="line175"></span>      flex-direction: column;
-<span id="line176"></span>      color: var(--bg-white);
-<span id="line177"></span>      margin: -6rem 0 0 5rem;
-<span id="line178"></span>      font-family: "Rubik", Arial, sans-serif;
-<span id="line179"></span>      font-weight: 500;
-<span id="line180"></span>    }
-<span id="line181"></span>
-<span id="line182"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-1 .jw-title-primary,
-<span id="line183"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-0 .jw-title-primary {
-<span id="line184"></span>      display: -webkit-box;
-<span id="line185"></span>      display: -ms-flexbox;
-<span id="line186"></span>      display: flex;
-<span id="line187"></span>      -webkit-box-pack: start;
-<span id="line188"></span>      -ms-flex-pack: start;
-<span id="line189"></span>      justify-content: flex-start;
-<span id="line190"></span>      margin: 3rem 0 0 2.5rem;
-<span id="line191"></span>      font-size: 1.2rem;
-<span id="line192"></span>    }
-<span id="line193"></span>
-<span id="line194"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-1 .jw-title-secondary,
-<span id="line195"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-0 .jw-title-secondary {
-<span id="line196"></span>      display: -webkit-box;
-<span id="line197"></span>      display: -ms-flexbox;
-<span id="line198"></span>      display: flex;
-<span id="line199"></span>      -webkit-box-pack: start;
-<span id="line200"></span>      -ms-flex-pack: start;
-<span id="line201"></span>      justify-content: flex-start;
-<span id="line202"></span>      margin: -2.6rem 0 0 2.5rem;
-<span id="line203"></span>      font-size: 0.8rem;
-<span id="line204"></span>    }
-<span id="line205"></span>
-<span id="line206"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-3 .jw-title-primary,
-<span id="line207"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-2 .jw-title-primary {
-<span id="line208"></span>      display: -webkit-box;
-<span id="line209"></span>      display: -ms-flexbox;
-<span id="line210"></span>      display: flex;
-<span id="line211"></span>      -webkit-box-pack: start;
-<span id="line212"></span>      -ms-flex-pack: start;
-<span id="line213"></span>      justify-content: flex-start;
-<span id="line214"></span>      margin: 4rem 0 0 2.5rem;
-<span id="line215"></span>      font-size: 2rem;
-<span id="line216"></span>    }
-<span id="line217"></span>
-<span id="line218"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-3 .jw-title-secondary,
-<span id="line219"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-2 .jw-title-secondary {
-<span id="line220"></span>      display: -webkit-box;
-<span id="line221"></span>      display: -ms-flexbox;
-<span id="line222"></span>      display: flex;
-<span id="line223"></span>      -webkit-box-pack: start;
-<span id="line224"></span>      -ms-flex-pack: start;
-<span id="line225"></span>      justify-content: flex-start;
-<span id="line226"></span>      margin: -5rem 0 0 2.5rem;
-<span id="line227"></span>      font-size: 1.5rem;
-<span id="line228"></span>    }
-<span id="line229"></span>
-<span id="line230"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-5 .jw-title-primary,
-<span id="line231"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-4 .jw-title-primary {
-<span id="line232"></span>      display: -webkit-box;
-<span id="line233"></span>      display: -ms-flexbox;
-<span id="line234"></span>      display: flex;
-<span id="line235"></span>      -webkit-box-pack: start;
-<span id="line236"></span>      -ms-flex-pack: start;
-<span id="line237"></span>      justify-content: flex-start;
-<span id="line238"></span>      margin: 5rem 0 0 2.5rem;
-<span id="line239"></span>      font-size: 2.5rem;
-<span id="line240"></span>    }
-<span id="line241"></span>
-<span id="line242"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-5 .jw-title-secondary,
-<span id="line243"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-4 .jw-title-secondary {
-<span id="line244"></span>      display: -webkit-box;
-<span id="line245"></span>      display: -ms-flexbox;
-<span id="line246"></span>      display: flex;
-<span id="line247"></span>      -webkit-box-pack: start;
-<span id="line248"></span>      -ms-flex-pack: start;
-<span id="line249"></span>      justify-content: flex-start;
-<span id="line250"></span>      margin: -6rem 0 0 2.5rem;
-<span id="line251"></span>      font-size: 1.5rem;
-<span id="line252"></span>    }
-<span id="line253"></span>
-<span id="line254"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-7 .jw-title-primary,
-<span id="line255"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-6 .jw-title-primary {
-<span id="line256"></span>      display: -webkit-box;
-<span id="line257"></span>      display: -ms-flexbox;
-<span id="line258"></span>      display: flex;
-<span id="line259"></span>      -webkit-box-pack: start;
-<span id="line260"></span>      -ms-flex-pack: start;
-<span id="line261"></span>      justify-content: flex-start;
-<span id="line262"></span>      margin: 5rem 0 0 2.5rem;
-<span id="line263"></span>      font-size: 3rem;
-<span id="line264"></span>    }
-<span id="line265"></span>
-<span id="line266"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-7 .jw-title-secondary,
-<span id="line267"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-6 .jw-title-secondary {
-<span id="line268"></span>      display: -webkit-box;
-<span id="line269"></span>      display: -ms-flexbox;
-<span id="line270"></span>      display: flex;
-<span id="line271"></span>      -webkit-box-pack: start;
-<span id="line272"></span>      -ms-flex-pack: start;
-<span id="line273"></span>      justify-content: flex-start;
-<span id="line274"></span>      margin: -7rem 0 0 2.5rem;
-<span id="line275"></span>      font-size: 2rem;
-<span id="line276"></span>    }
-<span id="line277"></span>
-<span id="line278"></span>    .jwplayer.jw-skin-netflix.jw-state-idle
-<span id="line279"></span>      .jw-display-icon-container
-<span id="line280"></span>      .jw-svg-icon-play
-<span id="line281"></span>      path {
-<span id="line282"></span>      display: none;
-<span id="line283"></span>    }
-<span id="line284"></span>
-<span id="line285"></span>    .jwplayer.jw-skin-netflix.jw-state-idle
-<span id="line286"></span>      .jw-display-icon-container
-<span id="line287"></span>      .jw-svg-icon-play {
-<span id="line288"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE5LjM3NiAxMi40MTZMOC43NzcgMTkuNDgyQS41LjUgMCAwIDEgOCAxOS4wNjZWNC45MzRhLjUuNSAwIDAgMSAuNzc3LS40MTZsMTAuNTk5IDcuMDY2YS41LjUgMCAwIDEgMCAuODMyeiIgZmlsbD0icmdiYSgyNDcsMjQ2LDI0NywxKSIvPjwvc3ZnPg==");
-<span id="line289"></span>      background-repeat: no-repeat;
-<span id="line290"></span>      background-position: center;
-<span id="line291"></span>      -webkit-transition: 0.2s;
-<span id="line292"></span>      transition: 0.2s;
-<span id="line293"></span>    }
-<span id="line294"></span>
-<span id="line295"></span>    .jwplayer.jw-skin-netflix.jw-state-idle
-<span id="line296"></span>      .jw-display-icon-container:hover
-<span id="line297"></span>      .jw-svg-icon-play {
-<span id="line298"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE5LjM3NiAxMi40MTZMOC43NzcgMTkuNDgyQS41LjUgMCAwIDEgOCAxOS4wNjZWNC45MzRhLjUuNSAwIDAgMSAuNzc3LS40MTZsMTAuNTk5IDcuMDY2YS41LjUgMCAwIDEgMCAuODMyeiIgZmlsbD0icmdiYSgyMjksOSwyMCwxKSIvPjwvc3ZnPg==");
-<span id="line299"></span>      background-repeat: no-repeat;
-<span id="line300"></span>      background-position: center;
-<span id="line301"></span>      -webkit-transition: 0.2s;
-<span id="line302"></span>      transition: 0.2s;
-<span id="line303"></span>    }
-<span id="line304"></span>
-<span id="line305"></span>    .jwplayer.jw-skin-netflix.jw-state-idle
-<span id="line306"></span>      .jw-display-icon-container
-<span id="line307"></span>      .jw-svg-icon-play {
-<span id="line308"></span>      background-color: rgba(255, 255, 255, 0.25);
-<span id="line309"></span>      border-radius: 100%;
-<span id="line310"></span>    }
-<span id="line311"></span>
-<span id="line312"></span>    .jwplayer.jw-skin-netflix.jw-state-idle
-<span id="line313"></span>      .jw-display-controls
-<span id="line314"></span>      .jw-display-icon-container
-<span id="line315"></span>      .jw-icon {
-<span id="line316"></span>      display: flex;
-<span id="line317"></span>      justify-content: center;
-<span id="line318"></span>      align-items: center;
-<span id="line319"></span>    }
-<span id="line320"></span>
-<span id="line321"></span>    .jwplayer.jw-skin-netflix.jw-state-idle .jw-preview,
-<span id="line322"></span>    .jwplayer.jw-skin-netflix.jw-state-complete .jw-preview {
-<span id="line323"></span>      width: calc(100% + 5rem);
-<span id="line324"></span>      background-size: calc(100% + 6rem);
-<span id="line325"></span>      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-<span id="line326"></span>      transition: opacity 0.35s, -webkit-transform 0.35s;
-<span id="line327"></span>      transition: opacity 0.35s, transform 0.35s;
-<span id="line328"></span>      transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
-<span id="line329"></span>      -webkit-transform: translate3d(-4rem, 0, 0);
-<span id="line330"></span>      transform: translate3d(-4rem, 0, 0);
-<span id="line331"></span>      background-repeat: no-repeat;
-<span id="line332"></span>      background-size: cover;
-<span id="line333"></span>    }
-<span id="line334"></span>
-<span id="line335"></span>    .jwplayer.jw-skin-netflix.jw-state-idle:hover .jw-preview,
-<span id="line336"></span>    .jwplayer.jw-skin-netflix.jw-state-complete:hover .jw-preview {
-<span id="line337"></span>      -webkit-transform: translate3d(0, 0, 0);
-<span id="line338"></span>      transform: translate3d(0, 0, 0);
-<span id="line339"></span>    }
-<span id="line340"></span>
-<span id="line341"></span>    .jwplayer.jw-skin-netflix.jw-state-paused .jw-title {
-<span id="line342"></span>      display: -webkit-box;
-<span id="line343"></span>      display: -ms-flexbox;
-<span id="line344"></span>      display: flex;
-<span id="line345"></span>      -webkit-box-pack: start;
-<span id="line346"></span>      -ms-flex-pack: start;
-<span id="line347"></span>      justify-content: flex-start;
-<span id="line348"></span>      -webkit-box-orient: vertical;
-<span id="line349"></span>      -webkit-box-direction: normal;
-<span id="line350"></span>      -ms-flex-direction: column;
-<span id="line351"></span>      flex-direction: column;
-<span id="line352"></span>    }
-<span id="line353"></span>
-<span id="line354"></span>    .jwplayer.jw-skin-netflix.jw-state-paused .jw-controls,
-<span id="line355"></span>    .jwplayer.jw-skin-netflix.jw-state-complete .jw-controls,
-<span id="line356"></span>    .jwplayer.jw-skin-netflix.jw-state-buffering .jw-controls {
-<span id="line357"></span>      background-color: rgba(0, 0, 0, 0.35);
-<span id="line358"></span>      transition: all 0.2s linear;
-<span id="line359"></span>      -o-transition: all 0.2s linear;
-<span id="line360"></span>      -moz-transition: all 0.2s linear;
-<span id="line361"></span>      -webkit-transition: all 0.2s linear;
-<span id="line362"></span>    }
-<span id="line363"></span>
-<span id="line364"></span>    .jwplayer.jw-skin-netflix
-<span id="line365"></span>      .jw-display-controls
-<span id="line366"></span>      .jw-display-icon-container
-<span id="line367"></span>      .jw-icon:hover {
-<span id="line368"></span>      color: var(--bg-red);
-<span id="line369"></span>    }
-<span id="line370"></span>
-<span id="line371"></span>    /*
-<span id="line372"></span>Amplia a imagem e adiciona transições.
-<span id="line373"></span>*/
-<span id="line374"></span>    .jwplayer.jw-skin-netflix .jw-preview {
-<span id="line375"></span>      width: calc(100% + 5rem);
-<span id="line376"></span>      background-size: calc(100% + 6rem);
-<span id="line377"></span>      transition: opacity 0.35s, transform 0.35s;
-<span id="line378"></span>      transform: translate3d(-4rem, 0, 0);
-<span id="line379"></span>    }
-<span id="line380"></span>
-<span id="line381"></span>    .jwplayer.jw-skin-netflix:hover .jw-preview {
-<span id="line382"></span>      transform: translate3d(0, 0, 0);
-<span id="line383"></span>    }
-<span id="line384"></span>
-<span id="line385"></span>    /*
-<span id="line386"></span>Deslizar a imagem em -4rem.
-<span id="line387"></span>*/
-<span id="line388"></span>    .jwplayer.jw-skin-netflix.jw-state-complete:hover .jw-preview {
-<span id="line389"></span>      transform: translate3d(-4rem, 0, 0);
-<span id="line390"></span>    }
-<span id="line391"></span>
-<span id="line392"></span>    /*
-<span id="line393"></span>Mudar a cor da barra de controle e alterar a cor do ícone em idle.
-<span id="line394"></span>*/
-<span id="line395"></span>    .jwplayer.jw-skin-netflix .jw-display {
-<span id="line396"></span>      padding-bottom: 4.5rem;
-<span id="line397"></span>    }
-<span id="line398"></span>
-<span id="line399"></span>    .jwplayer.jw-skin-netflix .jw-controls::after {
-<span id="line400"></span>      background: none;
-<span id="line401"></span>    }
-<span id="line402"></span>
-<span id="line403"></span>    .jwplayer.jw-skin-netflix
-<span id="line404"></span>      .jw-controlbar
-<span id="line405"></span>      .jw-button-container
-<span id="line406"></span>      .jw-button-color {
-<span id="line407"></span>      color: var(--bg-white);
-<span id="line408"></span>    }
-<span id="line409"></span>
-<span id="line410"></span>    .jwplayer.jw-skin-netflix.jw-state-paused
-<span id="line411"></span>      .jw-controlbar
-<span id="line412"></span>      .jw-button-container
-<span id="line413"></span>      .jw-button-color {
-<span id="line414"></span>      color: var(--bg-white);
-<span id="line415"></span>    }
-<span id="line416"></span>
-<span id="line417"></span>    .jwplayer.jw-skin-netflix
-<span id="line418"></span>      .jw-controlbar
-<span id="line419"></span>      .jw-button-container
-<span id="line420"></span>      .jw-button-color:hover {
-<span id="line421"></span>      color: var(--bg-red);
-<span id="line422"></span>    }
-<span id="line423"></span>
-<span id="line424"></span>    /*
-<span id="line425"></span>Toltips mais perto da barra, alterar cores e remover sombras.
-<span id="line426"></span>*/
-<span id="line427"></span>    .jwplayer.jw-skin-netflix .jw-controlbar .jw-tooltip {
-<span id="line428"></span>      box-shadow: none;
-<span id="line429"></span>    }
-<span id="line430"></span>
-<span id="line431"></span>    .jwplayer.jw-skin-netflix .jw-controlbar .jw-tooltip.jw-open {
-<span id="line432"></span>      border-radius: 0.3rem;
-<span id="line433"></span>      color: var(--bg-black);
-<span id="line434"></span>    }
-<span id="line435"></span>
-<span id="line436"></span>    .jwplayer.jw-skin-netflix .jw-controlbar .jw-tooltip .jw-text {
-<span id="line437"></span>      background-color: var(--bg-black);
-<span id="line438"></span>      border-radius: 0.3rem;
-<span id="line439"></span>    }
-<span id="line440"></span>
-<span id="line441"></span>    .jwplayer.jw-skin-netflix .jw-controlbar .jw-text {
-<span id="line442"></span>      color: var(--bg-white);
-<span id="line443"></span>    }
-<span id="line444"></span>
-<span id="line445"></span>    .jwplayer.jw-skin-netflix .jw-time-tip .jw-text {
-<span id="line446"></span>      color: var(--bg-black);
-<span id="line447"></span>    }
-<span id="line448"></span>
-<span id="line449"></span>    .jwplayer.jw-skin-netflix .jw-volume-tip {
-<span id="line450"></span>      margin-bottom: -4rem;
-<span id="line451"></span>    }
-<span id="line452"></span>
-<span id="line453"></span>    /*
-<span id="line454"></span>Tooltip timeslider e botões de qualidade e legenda.
-<span id="line455"></span>*/
-<span id="line456"></span>    .jwplayer.jw-skin-netflix .jw-settings-topbar-buttons .jw-tooltip-captions,
-<span id="line457"></span>    .jwplayer.jw-skin-netflix .jw-settings-topbar-buttons .jw-tooltip-quality,
-<span id="line458"></span>    .jwplayer.jw-skin-netflix
-<span id="line459"></span>      .jw-settings-topbar-buttons
-<span id="line460"></span>      .jw-tooltip-audioTracks,
-<span id="line461"></span>    .jwplayer.jw-skin-netflix .jw-settings-topbar-buttons .jw-tooltip-sharing {
-<span id="line462"></span>      color: var(--bg-black);
-<span id="line463"></span>    }
-<span id="line464"></span>
-<span id="line465"></span>    .jwplayer.jw-skin-netflix
-<span id="line466"></span>  .jw-settings-topbar-buttons
-<span id="line467"></span>  .jw-tooltip-captions
-<span id="line468"></span>  .jw-text,
-<span id="line469"></span>.jwplayer.jw-skin-netflix
-<span id="line470"></span>  .jw-settings-topbar-buttons
-<span id="line471"></span>  .jw-tooltip-quality
-<span id="line472"></span>  .jw-text,
-<span id="line473"></span>.jwplayer.jw-skin-netflix
-<span id="line474"></span>  .jw-settings-topbar-buttons
-<span id="line475"></span>  .jw-tooltip-audioTracks
-<span id="line476"></span>  .jw-text,
-<span id="line477"></span>.jwplayer.jw-skin-netflix
-<span id="line478"></span>  .jw-settings-topbar-buttons
-<span id="line479"></span>  .jw-tooltip-sharing
-<span id="line480"></span>  .jw-text
-<span id="line481"></span>/* .jwplayer.jw-skin-netflix .jw-time-tip .jw-reset */ {
-<span id="line482"></span>      border-radius: 0.3rem;
-<span id="line483"></span>      background-color: var(--bg-black);
-<span id="line484"></span>      color: var(--bg-white);
-<span id="line485"></span>    }
-<span id="line486"></span>
-<span id="line487"></span>    .jwplayer.jw-skin-netflix .jw-time-thumb {
-<span id="line488"></span>      border-radius: 0.3rem 0.3rem 0 0 !important;
-<span id="line489"></span>    }
-<span id="line490"></span>
-<span id="line491"></span>    .jwplayer.jw-skin-netflix .jw-time-tip .jw-reset {
-<span id="line492"></span>      border-radius: 0 0 0.3rem 0.3rem;
-<span id="line493"></span>      background-color: var(--bg-black);
-<span id="line494"></span>      color: var(--bg-white);
-<span id="line495"></span>    }
-<span id="line496"></span>
-<span id="line497"></span>    .jwplayer.jw-skin-netflix .jw-time-tip {
-<span id="line498"></span>      color: var(--bg-black);
-<span id="line499"></span>    }
-<span id="line500"></span>
-<span id="line501"></span>    /* 
-<span id="line502"></span>Tooltip copia
-<span id="line503"></span>*/
-<span id="line504"></span>    .jwplayer.jw-skin-netflix
-<span id="line505"></span>      .jw-settings-submenu-items
-<span id="line506"></span>      .jw-tooltip-sharing-Link {
-<span id="line507"></span>      color: var(--bg-black);
-<span id="line508"></span>    }
-<span id="line509"></span>
-<span id="line510"></span>    .jwplayer.jw-skin-netflix
-<span id="line511"></span>      .jw-settings-submenu-items
-<span id="line512"></span>      .jw-tooltip-sharing-Link
-<span id="line513"></span>      .jw-text {
-<span id="line514"></span>      color: var(--bg-white);
-<span id="line515"></span>      background-color: var(--bg-black);
-<span id="line516"></span>    }
-<span id="line517"></span>
-<span id="line518"></span>    /*
-<span id="line519"></span>Controle de volume.
-<span id="line520"></span>*/
-<span id="line521"></span>    .jwplayer.jw-skin-netflix
-<span id="line522"></span>      .jw-overlay
-<span id="line523"></span>      .jw-slider-volume
-<span id="line524"></span>      .jw-slider-container
-<span id="line525"></span>      .jw-knob {
-<span id="line526"></span>      background-color: var(--bg-red);
-<span id="line527"></span>    }
-<span id="line528"></span>
-<span id="line529"></span>    .jwplayer.jw-skin-netflix
-<span id="line530"></span>      .jw-overlay
-<span id="line531"></span>      .jw-slider-volume
-<span id="line532"></span>      .jw-slider-container
-<span id="line533"></span>      .jw-buffer,
-<span id="line534"></span>    .jwplayer.jw-skin-netflix
-<span id="line535"></span>      .jw-overlay
-<span id="line536"></span>      .jw-slider-volume
-<span id="line537"></span>      .jw-slider-container
-<span id="line538"></span>      .jw-rail {
-<span id="line539"></span>      background-color: var(--bg-black);
-<span id="line540"></span>      width: 0.2rem;
-<span id="line541"></span>    }
-<span id="line542"></span>
-<span id="line543"></span>    .jwplayer.jw-skin-netflix
-<span id="line544"></span>      .jw-overlay
-<span id="line545"></span>      .jw-slider-volume
-<span id="line546"></span>      .jw-slider-container
-<span id="line547"></span>      .jw-progress {
-<span id="line548"></span>      background-color: var(--bg-red);
-<span id="line549"></span>      width: 0.2rem;
-<span id="line550"></span>    }
-<span id="line551"></span>
-<span id="line552"></span>    /*
-<span id="line553"></span>Tamanho e cor da slider.
-<span id="line554"></span>*/
-<span id="line555"></span>    .jwplayer.jw-skin-netflix
-<span id="line556"></span>      .jw-controlbar
-<span id="line557"></span>      .jw-slider-time
-<span id="line558"></span>      .jw-slider-container
-<span id="line559"></span>      .jw-rail {
-<span id="line560"></span>      background-color: var(--bg-black);
-<span id="line561"></span>    }
-<span id="line562"></span>    .jwplayer.jw-skin-netflix
-<span id="line563"></span>      .jw-controlbar
-<span id="line564"></span>      .jw-slider-time
-<span id="line565"></span>      .jw-slider-container
-<span id="line566"></span>      .jw-buffer {
-<span id="line567"></span>      background-color: #222323;
-<span id="line568"></span>    }
-<span id="line569"></span>
-<span id="line570"></span>    .jwplayer.jw-skin-netflix
-<span id="line571"></span>      .jw-controlbar
-<span id="line572"></span>      .jw-slider-time
-<span id="line573"></span>      .jw-slider-container
-<span id="line574"></span>      .jw-knob,
-<span id="line575"></span>    .jwplayer.jw-skin-netflix
-<span id="line576"></span>      .jw-controlbar
-<span id="line577"></span>      .jw-slider-time
-<span id="line578"></span>      .jw-slider-container
-<span id="line579"></span>      .jw-progress {
-<span id="line580"></span>      background-color: var(--bg-red);
-<span id="line581"></span>    }
-<span id="line582"></span>
-<span id="line583"></span>    .jw-skin-netflix .jw-slider-horizontal .jw-rail,
-<span id="line584"></span>    .jw-skin-netflix .jw-slider-horizontal .jw-buffer,
-<span id="line585"></span>    .jw-skin-netflix .jw-slider-horizontal .jw-progress {
-<span id="line586"></span>      height: 0.3rem;
-<span id="line587"></span>    }
-<span id="line588"></span>
-<span id="line589"></span>    /*
-<span id="line590"></span>Cor do menu de configurações.
-<span id="line591"></span>*/
-<span id="line592"></span>    .jwplayer.jw-skin-netflix .jw-settings-menu {
-<span id="line593"></span>      background-color: var(--bg-black);
-<span id="line594"></span>      border-radius: 0.3rem;
-<span id="line595"></span>      width: 23rem;
-<span id="line596"></span>    }
-<span id="line597"></span>
-<span id="line598"></span>    .jwplayer.jw-skin-netflix .jw-settings-topbar {
-<span id="line599"></span>      border-radius: 0.3rem 0.3rem 0 0;
-<span id="line600"></span>    }
-<span id="line601"></span>
-<span id="line602"></span>    .jwplayer.jw-skin-netflix
-<span id="line603"></span>      .jw-settings-menu
-<span id="line604"></span>      .jw-settings-topbar:not(.jw-nested-menu-open)
-<span id="line605"></span>      .jw-icon-inline {
-<span id="line606"></span>      height: 5rem;
-<span id="line607"></span>    }
-<span id="line608"></span>
-<span id="line609"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-7 .jw-settings-menu {
-<span id="line610"></span>      margin: 0 -4.4rem -4.7rem 0;
-<span id="line611"></span>    }
-<span id="line612"></span>
-<span id="line613"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-6 .jw-settings-menu,
-<span id="line614"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-5 .jw-settings-menu,
-<span id="line615"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-4 .jw-settings-menu,
-<span id="line616"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-3 .jw-settings-menu,
-<span id="line617"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-2 .jw-settings-menu {
-<span id="line618"></span>      margin: 0 0.4rem 0.8rem 0;
-<span id="line619"></span>    }
-<span id="line620"></span>
-<span id="line621"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-1 .jw-settings-menu,
-<span id="line622"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-0 .jw-settings-menu {
-<span id="line623"></span>      width: 100%;
-<span id="line624"></span>      border-radius: 0;
-<span id="line625"></span>    }
-<span id="line626"></span>
-<span id="line627"></span>    /*
-<span id="line628"></span>Ícone Taxas de Reprodução e configurações de legendas.
-<span id="line629"></span>*/
-<span id="line630"></span>
-<span id="line631"></span>    .jw-svg-icon-playback-rate path {
-<span id="line632"></span>      color: var(--bg-white);
-<span id="line633"></span>    }
-<span id="line634"></span>
-<span id="line635"></span>    .jwplayer.jw-skin-netflix .jw-settings-menu .jw-submenu-topbar {
-<span id="line636"></span>      display: none;
-<span id="line637"></span>    }
-<span id="line638"></span>
-<span id="line639"></span>    /*
-<span id="line640"></span>Player responsivo jw8.
-<span id="line641"></span>*/
-<span id="line642"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-6 .jw-volume-tip,
-<span id="line643"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-5 .jw-volume-tip,
-<span id="line644"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-4 .jw-volume-tip,
-<span id="line645"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-3 .jw-volume-tip,
-<span id="line646"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-2 .jw-volume-tip,
-<span id="line647"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-1 .jw-volume-tip,
-<span id="line648"></span>    .jwplayer.jw-skin-netflix.jw-breakpoint-0 .jw-volume-tip {
-<span id="line649"></span>      margin-bottom: -2rem;
-<span id="line650"></span>    }
-<span id="line651"></span>
-<span id="line652"></span>    /*
-<span id="line653"></span>Animações do botão.
-<span id="line654"></span> */
-<span id="line655"></span>    @keyframes scaling {
-<span id="line656"></span>      from {
-<span id="line657"></span>        transform: scale(1);
-<span id="line658"></span>      }
-<span id="line659"></span>      to {
-<span id="line660"></span>        transform: scale(1.1);
-<span id="line661"></span>      }
-<span id="line662"></span>    }
-<span id="line663"></span>
-<span id="line664"></span>    /*
-<span id="line665"></span>ícones do player.
-<span id="line666"></span> */
-<span id="line667"></span>    .jw-svg-icon-buffer {
-<span id="line668"></span>      color: var(--bg-red);
-<span id="line669"></span>    }
-<span id="line670"></span>
-<span id="line671"></span>    /*
-<span id="line672"></span>ícone de Play
-<span id="line673"></span> */
-<span id="line674"></span>    .jw-state-paused .jw-svg-icon-play path {
-<span id="line675"></span>      display: none;
-<span id="line676"></span>    }
-<span id="line677"></span>
-<span id="line678"></span>    .jw-state-paused .jw-svg-icon-play {
-<span id="line679"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE5LjM3NiAxMi40MTZMOC43NzcgMTkuNDgyQS41LjUgMCAwIDEgOCAxOS4wNjZWNC45MzRhLjUuNSAwIDAgMSAuNzc3LS40MTZsMTAuNTk5IDcuMDY2YS41LjUgMCAwIDEgMCAuODMyeiIgZmlsbD0icmdiYSgyNDcsMjQ2LDI0NywxKSIvPjwvc3ZnPg==");
-<span id="line680"></span>      background-size: contain;
-<span id="line681"></span>      background-repeat: no-repeat;
-<span id="line682"></span>    }
-<span id="line683"></span>
-<span id="line684"></span>    .jw-state-paused .jw-icon-playback:hover .jw-svg-icon-play {
-<span id="line685"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE5LjM3NiAxMi40MTZMOC43NzcgMTkuNDgyQS41LjUgMCAwIDEgOCAxOS4wNjZWNC45MzRhLjUuNSAwIDAgMSAuNzc3LS40MTZsMTAuNTk5IDcuMDY2YS41LjUgMCAwIDEgMCAuODMyeiIgZmlsbD0icmdiYSgyMjksOSwyMCwxKSIvPjwvc3ZnPg==");
-<span id="line686"></span>    }
-<span id="line687"></span>
-<span id="line688"></span>    /*
-<span id="line689"></span>ícone de Puase.
-<span id="line690"></span> */
-<span id="line691"></span>    .jw-svg-icon-pause path {
-<span id="line692"></span>      display: none;
-<span id="line693"></span>    }
-<span id="line694"></span>
-<span id="line695"></span>    .jw-svg-icon-pause {
-<span id="line696"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTYgNWgydjE0SDZWNXptMTAgMGgydjE0aC0yVjV6IiBmaWxsPSJyZ2JhKDI0NywyNDYsMjQ3LDEpIi8+PC9zdmc+");
-<span id="line697"></span>      background-size: contain;
-<span id="line698"></span>      background-repeat: no-repeat;
-<span id="line699"></span>    }
-<span id="line700"></span>
-<span id="line701"></span>    .jw-icon-playback:hover .jw-svg-icon-pause {
-<span id="line702"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTYgNWgydjE0SDZWNXptMTAgMGgydjE0aC0yVjV6IiBmaWxsPSJyZ2JhKDIyOSw5LDIwLDEpIi8+PC9zdmc+");
-<span id="line703"></span>    }
-<span id="line704"></span>
-<span id="line705"></span>    /*
-<span id="line706"></span>Ícone de Configuração.
-<span id="line707"></span> */
-<span id="line708"></span>    .jw-svg-icon-settings path {
-<span id="line709"></span>      display: none;
-<span id="line710"></span>    }
-<span id="line711"></span>
-<span id="line712"></span>    .jw-svg-icon-settings {
-<span id="line713"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTIgMTJjMC0uODY1LjExLTEuNzAzLjMxNi0yLjUwNEEzIDMgMCAwIDAgNC45OSA0Ljg2N2E5Ljk5IDkuOTkgMCAwIDEgNC4zMzUtMi41MDUgMyAzIDAgMCAwIDUuMzQ4IDAgOS45OSA5Ljk5IDAgMCAxIDQuMzM1IDIuNTA1IDMgMyAwIDAgMCAyLjY3NSA0LjYzYy4yMDYuOC4zMTYgMS42MzguMzE2IDIuNTAzIDAgLjg2NS0uMTEgMS43MDMtLjMxNiAyLjUwNGEzIDMgMCAwIDAtMi42NzUgNC42MjkgOS45OSA5Ljk5IDAgMCAxLTQuMzM1IDIuNTA1IDMgMyAwIDAgMC01LjM0OCAwIDkuOTkgOS45OSAwIDAgMS00LjMzNS0yLjUwNSAzIDMgMCAwIDAtMi42NzUtNC42M0MyLjExIDEzLjcwNCAyIDEyLjg2NiAyIDEyem00LjgwNCAzYy42MyAxLjA5MS44MSAyLjM0Ni41NjQgMy41MjQuNDA4LjI5Ljg0Mi41NDEgMS4yOTcuNzVBNC45OTMgNC45OTMgMCAwIDEgMTIgMThjMS4yNiAwIDIuNDM4LjQ3MSAzLjMzNSAxLjI3NC40NTUtLjIwOS44ODktLjQ2IDEuMjk3LS43NUE0Ljk5MyA0Ljk5MyAwIDAgMSAxNy4xOTYgMTVhNC45OTMgNC45OTMgMCAwIDEgMi43Ny0yLjI1IDguMTI2IDguMTI2IDAgMCAwIDAtMS41QTQuOTkzIDQuOTkzIDAgMCAxIDE3LjE5NSA5YTQuOTkzIDQuOTkzIDAgMCAxLS41NjQtMy41MjQgNy45ODkgNy45ODkgMCAwIDAtMS4yOTctLjc1QTQuOTkzIDQuOTkzIDAgMCAxIDEyIDZhNC45OTMgNC45OTMgMCAwIDEtMy4zMzUtMS4yNzQgNy45OSA3Ljk5IDAgMCAwLTEuMjk3Ljc1QTQuOTkzIDQuOTkzIDAgMCAxIDYuODA0IDlhNC45OTMgNC45OTMgMCAwIDEtMi43NyAyLjI1IDguMTI2IDguMTI2IDAgMCAwIDAgMS41QTQuOTkzIDQuOTkzIDAgMCAxIDYuODA1IDE1ek0xMiAxNWEzIDMgMCAxIDEgMC02IDMgMyAwIDAgMSAwIDZ6bTAtMmExIDEgMCAxIDAgMC0yIDEgMSAwIDAgMCAwIDJ6IiBmaWxsPSJyZ2JhKDI0NywyNDYsMjQ3LDEpIi8+PC9zdmc+");
-<span id="line714"></span>      background-size: contain;
-<span id="line715"></span>      background-repeat: no-repeat;
-<span id="line716"></span>    }
-<span id="line717"></span>
-<span id="line718"></span>    .jw-icon-settings:hover .jw-svg-icon-settings {
-<span id="line719"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTIgMTJjMC0uODY1LjExLTEuNzAzLjMxNi0yLjUwNEEzIDMgMCAwIDAgNC45OSA0Ljg2N2E5Ljk5IDkuOTkgMCAwIDEgNC4zMzUtMi41MDUgMyAzIDAgMCAwIDUuMzQ4IDAgOS45OSA5Ljk5IDAgMCAxIDQuMzM1IDIuNTA1IDMgMyAwIDAgMCAyLjY3NSA0LjYzYy4yMDYuOC4zMTYgMS42MzguMzE2IDIuNTAzIDAgLjg2NS0uMTEgMS43MDMtLjMxNiAyLjUwNGEzIDMgMCAwIDAtMi42NzUgNC42MjkgOS45OSA5Ljk5IDAgMCAxLTQuMzM1IDIuNTA1IDMgMyAwIDAgMC01LjM0OCAwIDkuOTkgOS45OSAwIDAgMS00LjMzNS0yLjUwNSAzIDMgMCAwIDAtMi42NzUtNC42M0MyLjExIDEzLjcwNCAyIDEyLjg2NiAyIDEyem00LjgwNCAzYy42MyAxLjA5MS44MSAyLjM0Ni41NjQgMy41MjQuNDA4LjI5Ljg0Mi41NDEgMS4yOTcuNzVBNC45OTMgNC45OTMgMCAwIDEgMTIgMThjMS4yNiAwIDIuNDM4LjQ3MSAzLjMzNSAxLjI3NC40NTUtLjIwOS44ODktLjQ2IDEuMjk3LS43NUE0Ljk5MyA0Ljk5MyAwIDAgMSAxNy4xOTYgMTVhNC45OTMgNC45OTMgMCAwIDEgMi43Ny0yLjI1IDguMTI2IDguMTI2IDAgMCAwIDAtMS41QTQuOTkzIDQuOTkzIDAgMCAxIDE3LjE5NSA5YTQuOTkzIDQuOTkzIDAgMCAxLS41NjQtMy41MjQgNy45ODkgNy45ODkgMCAwIDAtMS4yOTctLjc1QTQuOTkzIDQuOTkzIDAgMCAxIDEyIDZhNC45OTMgNC45OTMgMCAwIDEtMy4zMzUtMS4yNzQgNy45OSA3Ljk5IDAgMCAwLTEuMjk3Ljc1QTQuOTkzIDQuOTkzIDAgMCAxIDYuODA0IDlhNC45OTMgNC45OTMgMCAwIDEtMi43NyAyLjI1IDguMTI2IDguMTI2IDAgMCAwIDAgMS41QTQuOTkzIDQuOTkzIDAgMCAxIDYuODA1IDE1ek0xMiAxNWEzIDMgMCAxIDEgMC02IDMgMyAwIDAgMSAwIDZ6bTAtMmExIDEgMCAxIDAgMC0yIDEgMSAwIDAgMCAwIDJ6IiBmaWxsPSJyZ2JhKDIyOSw5LDIwLDEpIi8+PC9zdmc+");
-<span id="line720"></span>    }
-<span id="line721"></span>
-<span id="line722"></span>    /*
-<span id="line723"></span>Ícone de Qualidade.
-<span id="line724"></span> */
-<span id="line725"></span>    .jw-svg-icon-quality-100 path {
-<span id="line726"></span>      display: none;
-<span id="line727"></span>    }
-<span id="line728"></span>
-<span id="line729"></span>    .jw-svg-icon-quality-100 {
-<span id="line730"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTYuMTcgMThhMy4wMDEgMy4wMDEgMCAwIDEgNS42NiAwSDIydjJIMTEuODNhMy4wMDEgMy4wMDEgMCAwIDEtNS42NiAwSDJ2LTJoNC4xN3ptNi03YTMuMDAxIDMuMDAxIDAgMCAxIDUuNjYgMEgyMnYyaC00LjE3YTMuMDAxIDMuMDAxIDAgMCAxLTUuNjYgMEgydi0yaDEwLjE3em0tNi03YTMuMDAxIDMuMDAxIDAgMCAxIDUuNjYgMEgyMnYySDExLjgzYTMuMDAxIDMuMDAxIDAgMCAxLTUuNjYgMEgyVjRoNC4xN3pNOSA2YTEgMSAwIDEgMCAwLTIgMSAxIDAgMCAwIDAgMnptNiA3YTEgMSAwIDEgMCAwLTIgMSAxIDAgMCAwIDAgMnptLTYgN2ExIDEgMCAxIDAgMC0yIDEgMSAwIDAgMCAwIDJ6IiBmaWxsPSJyZ2JhKDI0NywyNDcsMjQ3LDEpIi8+PC9zdmc+");
-<span id="line731"></span>      background-size: contain;
-<span id="line732"></span>      background-repeat: no-repeat;
-<span id="line733"></span>    }
-<span id="line734"></span>
-<span id="line735"></span>    .jwplayer.jw-skin-netflix
-<span id="line736"></span>      .jw-submenu-quality:hover
-<span id="line737"></span>      .jw-svg-icon-quality-100 {
-<span id="line738"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTYuMTcgMThhMy4wMDEgMy4wMDEgMCAwIDEgNS42NiAwSDIydjJIMTEuODNhMy4wMDEgMy4wMDEgMCAwIDEtNS42NiAwSDJ2LTJoNC4xN3ptNi03YTMuMDAxIDMuMDAxIDAgMCAxIDUuNjYgMEgyMnYyaC00LjE3YTMuMDAxIDMuMDAxIDAgMCAxLTUuNjYgMEgydi0yaDEwLjE3em0tNi03YTMuMDAxIDMuMDAxIDAgMCAxIDUuNjYgMEgyMnYySDExLjgzYTMuMDAxIDMuMDAxIDAgMCAxLTUuNjYgMEgyVjRoNC4xN3pNOSA2YTEgMSAwIDEgMCAwLTIgMSAxIDAgMCAwIDAgMnptNiA3YTEgMSAwIDEgMCAwLTIgMSAxIDAgMCAwIDAgMnptLTYgN2ExIDEgMCAxIDAgMC0yIDEgMSAwIDAgMCAwIDJ6IiBmaWxsPSJyZ2JhKDIyOSw5LDIwLDEpIi8+PC9zdmc+");
-<span id="line739"></span>    }
-<span id="line740"></span>
-<span id="line741"></span>    /*
-<span id="line742"></span>Ícone de Fechar.
-<span id="line743"></span> */
-<span id="line744"></span>    .jw-svg-icon-close path {
-<span id="line745"></span>      display: none;
-<span id="line746"></span>    }
-<span id="line747"></span>
-<span id="line748"></span>    .jw-svg-icon-close {
-<span id="line749"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTEyIDEwLjU4Nmw0Ljk1LTQuOTUgMS40MTQgMS40MTQtNC45NSA0Ljk1IDQuOTUgNC45NS0xLjQxNCAxLjQxNC00Ljk1LTQuOTUtNC45NSA0Ljk1LTEuNDE0LTEuNDE0IDQuOTUtNC45NS00Ljk1LTQuOTVMNy4wNSA1LjYzNnoiIGZpbGw9InJnYmEoMjQ3LDI0NiwyNDcsMSkiLz48L3N2Zz4=");
-<span id="line750"></span>      background-size: contain;
-<span id="line751"></span>      background-repeat: no-repeat;
-<span id="line752"></span>    }
-<span id="line753"></span>
-<span id="line754"></span>    .jw-settings-close:hover .jw-svg-icon-close {
-<span id="line755"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTEyIDEwLjU4Nmw0Ljk1LTQuOTUgMS40MTQgMS40MTQtNC45NSA0Ljk1IDQuOTUgNC45NS0xLjQxNCAxLjQxNC00Ljk1LTQuOTUtNC45NSA0Ljk1LTEuNDE0LTEuNDE0IDQuOTUtNC45NS00Ljk1LTQuOTVMNy4wNSA1LjYzNnoiIGZpbGw9InJnYmEoMjI5LDksMjAsMSkiLz48L3N2Zz4=");
-<span id="line756"></span>    }
-<span id="line757"></span>
-<span id="line758"></span>    /*
-<span id="line759"></span>Ícone de Legenda.
-<span id="line760"></span> */
-<span id="line761"></span>    .jw-svg-icon-cc-off path {
-<span id="line762"></span>      display: none;
-<span id="line763"></span>    }
-<span id="line764"></span>
-<span id="line765"></span>    .jw-svg-icon-cc-off {
-<span id="line766"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwSDI0VjI0SDB6Ii8+PHBhdGggZD0iTTIxIDNjLjU1MiAwIDEgLjQ0OCAxIDF2MTZjMCAuNTUyLS40NDggMS0xIDFIM2MtLjU1MiAwLTEtLjQ0OC0xLTFWNGMwLS41NTIuNDQ4LTEgMS0xaDE4em0tMSAySDR2MTRoMTZWNXpNOSA4YzEuMTA1IDAgMi4xMDUuNDQ4IDIuODI5IDEuMTczbC0xLjQxNCAxLjQxNEMxMC4wNTMgMTAuMjI0IDkuNTUzIDEwIDkgMTBjLTEuMTA1IDAtMiAuODk1LTIgMnMuODk1IDIgMiAyYy41NTMgMCAxLjA1My0uMjI0IDEuNDE0LS41ODZsMS40MTQgMS40MTRDMTEuMTA0IDE1LjU1MiAxMC4xMDQgMTYgOSAxNmMtMi4yMDggMC00LTEuNzkyLTQtNHMxLjc5Mi00IDQtNHptNyAwYzEuMTA1IDAgMi4xMDUuNDQ4IDIuODI5IDEuMTczbC0xLjQxNCAxLjQxNEMxNy4wNTMgMTAuMjI0IDE2LjU1MyAxMCAxNiAxMGMtMS4xMDUgMC0yIC44OTUtMiAycy44OTUgMiAyIDJjLjU1MiAwIDEuMDUyLS4yMjQgMS40MTQtLjU4NmwxLjQxNCAxLjQxNEMxOC4xMDQgMTUuNTUyIDE3LjEwNCAxNiAxNiAxNmMtMi4yMDggMC00LTEuNzkyLTQtNHMxLjc5Mi00IDQtNHoiIGZpbGw9InJnYmEoMjQ3LDI0NiwyNDcsMSkiLz48L3N2Zz4=");
-<span id="line767"></span>      background-size: contain;
-<span id="line768"></span>      background-repeat: no-repeat;
-<span id="line769"></span>    }
-<span id="line770"></span>
-<span id="line771"></span>    .jwplayer.jw-skin-netflix .jw-submenu-captions:hover .jw-svg-icon-cc-off {
-<span id="line772"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwSDI0VjI0SDB6Ii8+PHBhdGggZD0iTTIxIDNjLjU1MiAwIDEgLjQ0OCAxIDF2MTZjMCAuNTUyLS40NDggMS0xIDFIM2MtLjU1MiAwLTEtLjQ0OC0xLTFWNGMwLS41NTIuNDQ4LTEgMS0xaDE4em0tMSAySDR2MTRoMTZWNXpNOSA4YzEuMTA1IDAgMi4xMDUuNDQ4IDIuODI5IDEuMTczbC0xLjQxNCAxLjQxNEMxMC4wNTMgMTAuMjI0IDkuNTUzIDEwIDkgMTBjLTEuMTA1IDAtMiAuODk1LTIgMnMuODk1IDIgMiAyYy41NTMgMCAxLjA1My0uMjI0IDEuNDE0LS41ODZsMS40MTQgMS40MTRDMTEuMTA0IDE1LjU1MiAxMC4xMDQgMTYgOSAxNmMtMi4yMDggMC00LTEuNzkyLTQtNHMxLjc5Mi00IDQtNHptNyAwYzEuMTA1IDAgMi4xMDUuNDQ4IDIuODI5IDEuMTczbC0xLjQxNCAxLjQxNEMxNy4wNTMgMTAuMjI0IDE2LjU1MyAxMCAxNiAxMGMtMS4xMDUgMC0yIC44OTUtMiAycy44OTUgMiAyIDJjLjU1MiAwIDEuMDUyLS4yMjQgMS40MTQtLjU4NmwxLjQxNCAxLjQxNEMxOC4xMDQgMTUuNTUyIDE3LjEwNCAxNiAxNiAxNmMtMi4yMDggMC00LTEuNzkyLTQtNHMxLjc5Mi00IDQtNHoiIGZpbGw9InJnYmEoMjI5LDksMjAsMSkiLz48L3N2Zz4=");
-<span id="line773"></span>    }
-<span id="line774"></span>
-<span id="line775"></span>    .jw-icon-cc .jw-svg-icon-cc-off path {
-<span id="line776"></span>      display: none;
-<span id="line777"></span>    }
-<span id="line778"></span>
-<span id="line779"></span>    .jw-icon-cc .jw-svg-icon-cc-off {
-<span id="line780"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwSDI0VjI0SDB6Ii8+PHBhdGggZD0iTTIxIDNjLjU1MiAwIDEgLjQ0OCAxIDF2MTZjMCAuNTUyLS40NDggMS0xIDFIM2MtLjU1MiAwLTEtLjQ0OC0xLTFWNGMwLS41NTIuNDQ4LTEgMS0xaDE4em0tMSAySDR2MTRoMTZWNXpNOSA4YzEuMTA1IDAgMi4xMDUuNDQ4IDIuODI5IDEuMTczbC0xLjQxNCAxLjQxNEMxMC4wNTMgMTAuMjI0IDkuNTUzIDEwIDkgMTBjLTEuMTA1IDAtMiAuODk1LTIgMnMuODk1IDIgMiAyYy41NTMgMCAxLjA1My0uMjI0IDEuNDE0LS41ODZsMS40MTQgMS40MTRDMTEuMTA0IDE1LjU1MiAxMC4xMDQgMTYgOSAxNmMtMi4yMDggMC00LTEuNzkyLTQtNHMxLjc5Mi00IDQtNHptNyAwYzEuMTA1IDAgMi4xMDUuNDQ4IDIuODI5IDEuMTczbC0xLjQxNCAxLjQxNEMxNy4wNTMgMTAuMjI0IDE2LjU1MyAxMCAxNiAxMGMtMS4xMDUgMC0yIC44OTUtMiAycy44OTUgMiAyIDJjLjU1MiAwIDEuMDUyLS4yMjQgMS40MTQtLjU4NmwxLjQxNCAxLjQxNEMxOC4xMDQgMTUuNTUyIDE3LjEwNCAxNiAxNiAxNmMtMi4yMDggMC00LTEuNzkyLTQtNHMxLjc5Mi00IDQtNHoiIGZpbGw9InJnYmEoMjQ3LDI0NiwyNDcsMSkiLz48L3N2Zz4=");
-<span id="line781"></span>      background-size: contain;
-<span id="line782"></span>      background-repeat: no-repeat;
-<span id="line783"></span>    }
-<span id="line784"></span>
-<span id="line785"></span>    .jw-icon-cc:hover .jw-svg-icon-cc-off {
-<span id="line786"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwSDI0VjI0SDB6Ii8+PHBhdGggZD0iTTIxIDNjLjU1MiAwIDEgLjQ0OCAxIDF2MTZjMCAuNTUyLS40NDggMS0xIDFIM2MtLjU1MiAwLTEtLjQ0OC0xLTFWNGMwLS41NTIuNDQ4LTEgMS0xaDE4em0tMSAySDR2MTRoMTZWNXpNOSA4YzEuMTA1IDAgMi4xMDUuNDQ4IDIuODI5IDEuMTczbC0xLjQxNCAxLjQxNEMxMC4wNTMgMTAuMjI0IDkuNTUzIDEwIDkgMTBjLTEuMTA1IDAtMiAuODk1LTIgMnMuODk1IDIgMiAyYy41NTMgMCAxLjA1My0uMjI0IDEuNDE0LS41ODZsMS40MTQgMS40MTRDMTEuMTA0IDE1LjU1MiAxMC4xMDQgMTYgOSAxNmMtMi4yMDggMC00LTEuNzkyLTQtNHMxLjc5Mi00IDQtNHptNyAwYzEuMTA1IDAgMi4xMDUuNDQ4IDIuODI5IDEuMTczbC0xLjQxNCAxLjQxNEMxNy4wNTMgMTAuMjI0IDE2LjU1MyAxMCAxNiAxMGMtMS4xMDUgMC0yIC44OTUtMiAycy44OTUgMiAyIDJjLjU1MiAwIDEuMDUyLS4yMjQgMS40MTQtLjU4NmwxLjQxNCAxLjQxNEMxOC4xMDQgMTUuNTUyIDE3LjEwNCAxNiAxNiAxNmMtMi4yMDggMC00LTEuNzkyLTQtNHMxLjc5Mi00IDQtNHoiIGZpbGw9InJnYmEoMjI5LDksMjAsMSkiLz48L3N2Zz4=");
-<span id="line787"></span>    }
-<span id="line788"></span>
-<span id="line789"></span>    .jw-icon-cc .jw-svg-icon-cc-on path {
-<span id="line790"></span>      display: none;
-<span id="line791"></span>    }
-<span id="line792"></span>
-<span id="line793"></span>    .jw-icon-cc .jw-svg-icon-cc-on {
-<span id="line794"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwSDI0VjI0SDB6Ii8+PHBhdGggZD0iTTIxIDNjLjU1MiAwIDEgLjQ0OCAxIDF2MTZjMCAuNTUyLS40NDggMS0xIDFIM2MtLjU1MiAwLTEtLjQ0OC0xLTFWNGMwLS41NTIuNDQ4LTEgMS0xaDE4ek05IDhjLTIuMjA4IDAtNCAxLjc5Mi00IDRzMS43OTIgNCA0IDRjMS4xIDAgMi4xLS40NSAyLjgyOC0xLjE3MmwtMS40MTQtMS40MTRDMTAuMDUzIDEzLjc3NiA5LjU1MyAxNCA5IDE0Yy0xLjEwNSAwLTItLjg5NS0yLTJzLjg5NS0yIDItMmMuNTUgMCAxLjA0OC4yMiAxLjQxNS41ODdsMS40MTQtMS40MTRDMTEuMTA1IDguNDQ4IDEwLjEwNSA4IDkgOHptNyAwYy0yLjIwOCAwLTQgMS43OTItNCA0czEuNzkyIDQgNCA0YzEuMTA0IDAgMi4xMDQtLjQ0OCAyLjgyOC0xLjE3MmwtMS40MTQtMS40MTRjLS4zNjIuMzYyLS44NjIuNTg2LTEuNDE0LjU4Ni0xLjEwNSAwLTItLjg5NS0yLTJzLjg5NS0yIDItMmMuNTUzIDAgMS4wNTMuMjI0IDEuNDE1LjU4N2wxLjQxNC0xLjQxNEMxOC4xMDUgOC40NDggMTcuMTA1IDggMTYgOHoiIGZpbGw9InJnYmEoMjQ3LDI0NiwyNDcsMSkiLz48L3N2Zz4=");
-<span id="line795"></span>      background-size: contain;
-<span id="line796"></span>      background-repeat: no-repeat;
-<span id="line797"></span>    }
-<span id="line798"></span>
-<span id="line799"></span>    .jw-icon-cc:hover .jw-svg-icon-cc-on {
-<span id="line800"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwSDI0VjI0SDB6Ii8+PHBhdGggZD0iTTIxIDNjLjU1MiAwIDEgLjQ0OCAxIDF2MTZjMCAuNTUyLS40NDggMS0xIDFIM2MtLjU1MiAwLTEtLjQ0OC0xLTFWNGMwLS41NTIuNDQ4LTEgMS0xaDE4ek05IDhjLTIuMjA4IDAtNCAxLjc5Mi00IDRzMS43OTIgNCA0IDRjMS4xIDAgMi4xLS40NSAyLjgyOC0xLjE3MmwtMS40MTQtMS40MTRDMTAuMDUzIDEzLjc3NiA5LjU1MyAxNCA5IDE0Yy0xLjEwNSAwLTItLjg5NS0yLTJzLjg5NS0yIDItMmMuNTUgMCAxLjA0OC4yMiAxLjQxNS41ODdsMS40MTQtMS40MTRDMTEuMTA1IDguNDQ4IDEwLjEwNSA4IDkgOHptNyAwYy0yLjIwOCAwLTQgMS43OTItNCA0czEuNzkyIDQgNCA0YzEuMTA0IDAgMi4xMDQtLjQ0OCAyLjgyOC0xLjE3MmwtMS40MTQtMS40MTRjLS4zNjIuMzYyLS44NjIuNTg2LTEuNDE0LjU4Ni0xLjEwNSAwLTItLjg5NS0yLTJzLjg5NS0yIDItMmMuNTUzIDAgMS4wNTMuMjI0IDEuNDE1LjU4N2wxLjQxNC0xLjQxNEMxOC4xMDUgOC40NDggMTcuMTA1IDggMTYgOHoiIGZpbGw9InJnYmEoMjI5LDksMjAsMSkiLz48L3N2Zz4=");
-<span id="line801"></span>    }
-<span id="line802"></span>
-<span id="line803"></span>    /*
-<span id="line804"></span>Ícone de Volume.
-<span id="line805"></span> */
-<span id="line806"></span>    .jw-svg-icon-volume-100 path {
-<span id="line807"></span>      display: none;
-<span id="line808"></span>    }
-<span id="line809"></span>
-<span id="line810"></span>    .jw-svg-icon-volume-100 {
-<span id="line811"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTEwIDcuMjJMNi42MDMgMTBIM3Y0aDMuNjAzTDEwIDE2Ljc4VjcuMjJ6TTUuODg5IDE2SDJhMSAxIDAgMCAxLTEtMVY5YTEgMSAwIDAgMSAxLTFoMy44ODlsNS4yOTQtNC4zMzJhLjUuNSAwIDAgMSAuODE3LjM4N3YxNS44OWEuNS41IDAgMCAxLS44MTcuMzg3TDUuODkgMTZ6bTEzLjUxNyA0LjEzNGwtMS40MTYtMS40MTZBOC45NzggOC45NzggMCAwIDAgMjEgMTJhOC45ODIgOC45ODIgMCAwIDAtMy4zMDQtNi45NjhsMS40Mi0xLjQyQTEwLjk3NiAxMC45NzYgMCAwIDEgMjMgMTJjMCAzLjIyMy0xLjM4NiA2LjEyMi0zLjU5NCA4LjEzNHptLTMuNTQzLTMuNTQzbC0xLjQyMi0xLjQyMkEzLjk5MyAzLjk5MyAwIDAgMCAxNiAxMmMwLTEuNDMtLjc1LTIuNjg1LTEuODgtMy4zOTJsMS40MzktMS40MzlBNS45OTEgNS45OTEgMCAwIDEgMTggMTJjMCAxLjg0Mi0uODMgMy40OS0yLjEzNyA0LjU5MXoiIGZpbGw9InJnYmEoMjQ3LDI0NiwyNDcsMSkiLz48L3N2Zz4=");
-<span id="line812"></span>      background-size: contain;
-<span id="line813"></span>      background-repeat: no-repeat;
-<span id="line814"></span>    }
-<span id="line815"></span>
-<span id="line816"></span>    .jw-icon-volume:hover .jw-svg-icon-volume-100 {
-<span id="line817"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTEwIDcuMjJMNi42MDMgMTBIM3Y0aDMuNjAzTDEwIDE2Ljc4VjcuMjJ6TTUuODg5IDE2SDJhMSAxIDAgMCAxLTEtMVY5YTEgMSAwIDAgMSAxLTFoMy44ODlsNS4yOTQtNC4zMzJhLjUuNSAwIDAgMSAuODE3LjM4N3YxNS44OWEuNS41IDAgMCAxLS44MTcuMzg3TDUuODkgMTZ6bTEzLjUxNyA0LjEzNGwtMS40MTYtMS40MTZBOC45NzggOC45NzggMCAwIDAgMjEgMTJhOC45ODIgOC45ODIgMCAwIDAtMy4zMDQtNi45NjhsMS40Mi0xLjQyQTEwLjk3NiAxMC45NzYgMCAwIDEgMjMgMTJjMCAzLjIyMy0xLjM4NiA2LjEyMi0zLjU5NCA4LjEzNHptLTMuNTQzLTMuNTQzbC0xLjQyMi0xLjQyMkEzLjk5MyAzLjk5MyAwIDAgMCAxNiAxMmMwLTEuNDMtLjc1LTIuNjg1LTEuODgtMy4zOTJsMS40MzktMS40MzlBNS45OTEgNS45OTEgMCAwIDEgMTggMTJjMCAxLjg0Mi0uODMgMy40OS0yLjEzNyA0LjU5MXoiIGZpbGw9InJnYmEoMjI5LDksMjAsMSkiLz48L3N2Zz4=");
-<span id="line818"></span>    }
-<span id="line819"></span>
-<span id="line820"></span>    .jw-svg-icon-volume-50 path {
-<span id="line821"></span>      display: none;
-<span id="line822"></span>    }
-<span id="line823"></span>
-<span id="line824"></span>    .jw-svg-icon-volume-50 {
-<span id="line825"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTEzIDcuMjJMOS42MDMgMTBINnY0aDMuNjAzTDEzIDE2Ljc4VjcuMjJ6TTguODg5IDE2SDVhMSAxIDAgMCAxLTEtMVY5YTEgMSAwIDAgMSAxLTFoMy44ODlsNS4yOTQtNC4zMzJhLjUuNSAwIDAgMSAuODE3LjM4N3YxNS44OWEuNS41IDAgMCAxLS44MTcuMzg3TDguODkgMTZ6bTkuOTc0LjU5MWwtMS40MjItMS40MjJBMy45OTMgMy45OTMgMCAwIDAgMTkgMTJjMC0xLjQzLS43NS0yLjY4NS0xLjg4LTMuMzkybDEuNDM5LTEuNDM5QTUuOTkxIDUuOTkxIDAgMCAxIDIxIDEyYzAgMS44NDItLjgzIDMuNDktMi4xMzcgNC41OTF6IiBmaWxsPSJyZ2JhKDI0NywyNDYsMjQ3LDEpIi8+PC9zdmc+");
-<span id="line826"></span>      background-size: contain;
-<span id="line827"></span>      background-repeat: no-repeat;
-<span id="line828"></span>    }
-<span id="line829"></span>
-<span id="line830"></span>    .jw-icon-volume:hover .jw-svg-icon-volume-50 {
-<span id="line831"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTEzIDcuMjJMOS42MDMgMTBINnY0aDMuNjAzTDEzIDE2Ljc4VjcuMjJ6TTguODg5IDE2SDVhMSAxIDAgMCAxLTEtMVY5YTEgMSAwIDAgMSAxLTFoMy44ODlsNS4yOTQtNC4zMzJhLjUuNSAwIDAgMSAuODE3LjM4N3YxNS44OWEuNS41IDAgMCAxLS44MTcuMzg3TDguODkgMTZ6bTkuOTc0LjU5MWwtMS40MjItMS40MjJBMy45OTMgMy45OTMgMCAwIDAgMTkgMTJjMC0xLjQzLS43NS0yLjY4NS0xLjg4LTMuMzkybDEuNDM5LTEuNDM5QTUuOTkxIDUuOTkxIDAgMCAxIDIxIDEyYzAgMS44NDItLjgzIDMuNDktMi4xMzcgNC41OTF6IiBmaWxsPSJyZ2JhKDIyOSw5LDIwLDEpIi8+PC9zdmc+");
-<span id="line832"></span>    }
-<span id="line833"></span>
-<span id="line834"></span>    .jw-svg-icon-volume-0 path {
-<span id="line835"></span>      display: none;
-<span id="line836"></span>    }
-<span id="line837"></span>
-<span id="line838"></span>    .jw-svg-icon-volume-0 {
-<span id="line839"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTEwIDcuMjJMNi42MDMgMTBIM3Y0aDMuNjAzTDEwIDE2Ljc4VjcuMjJ6TTUuODg5IDE2SDJhMSAxIDAgMCAxLTEtMVY5YTEgMSAwIDAgMSAxLTFoMy44ODlsNS4yOTQtNC4zMzJhLjUuNSAwIDAgMSAuODE3LjM4N3YxNS44OWEuNS41IDAgMCAxLS44MTcuMzg3TDUuODkgMTZ6bTE0LjUyNS00bDMuNTM2IDMuNTM2LTEuNDE0IDEuNDE0TDE5IDEzLjQxNGwtMy41MzYgMy41MzYtMS40MTQtMS40MTRMMTcuNTg2IDEyIDE0LjA1IDguNDY0bDEuNDE0LTEuNDE0TDE5IDEwLjU4NmwzLjUzNi0zLjUzNiAxLjQxNCAxLjQxNEwyMC40MTQgMTJ6IiBmaWxsPSJyZ2JhKDI0NywyNDYsMjQ3LDEpIi8+PC9zdmc+");
-<span id="line840"></span>      background-size: contain;
-<span id="line841"></span>      background-repeat: no-repeat;
-<span id="line842"></span>    }
-<span id="line843"></span>
-<span id="line844"></span>    .jw-icon-volume:hover .jw-svg-icon-volume-0 {
-<span id="line845"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTEwIDcuMjJMNi42MDMgMTBIM3Y0aDMuNjAzTDEwIDE2Ljc4VjcuMjJ6TTUuODg5IDE2SDJhMSAxIDAgMCAxLTEtMVY5YTEgMSAwIDAgMSAxLTFoMy44ODlsNS4yOTQtNC4zMzJhLjUuNSAwIDAgMSAuODE3LjM4N3YxNS44OWEuNS41IDAgMCAxLS44MTcuMzg3TDUuODkgMTZ6bTE0LjUyNS00bDMuNTM2IDMuNTM2LTEuNDE0IDEuNDE0TDE5IDEzLjQxNGwtMy41MzYgMy41MzYtMS40MTQtMS40MTRMMTcuNTg2IDEyIDE0LjA1IDguNDY0bDEuNDE0LTEuNDE0TDE5IDEwLjU4NmwzLjUzNi0zLjUzNiAxLjQxNCAxLjQxNEwyMC40MTQgMTJ6IiBmaWxsPSJyZ2JhKDIyOSw5LDIwLDEpIi8+PC9zdmc+");
-<span id="line846"></span>    }
-<span id="line847"></span>
-<span id="line848"></span>    /*
-<span id="line849"></span>Ícone de Tela Cheia.
-<span id="line850"></span> */
-<span id="line851"></span>    .jw-svg-icon-fullscreen-on path {
-<span id="line852"></span>      display: none;
-<span id="line853"></span>    }
-<span id="line854"></span>
-<span id="line855"></span>    .jw-svg-icon-fullscreen-on {
-<span id="line856"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTIwIDNoMnY2aC0yVjVoLTRWM2g0ek00IDNoNHYySDR2NEgyVjNoMnptMTYgMTZ2LTRoMnY2aC02di0yaDR6TTQgMTloNHYySDJ2LTZoMnY0eiIgZmlsbD0icmdiYSgyNDcsMjQ2LDI0NywxKSIvPjwvc3ZnPg==");
-<span id="line857"></span>      background-size: contain;
-<span id="line858"></span>      background-repeat: no-repeat;
-<span id="line859"></span>    }
-<span id="line860"></span>
-<span id="line861"></span>    .jw-icon-fullscreen:hover .jw-svg-icon-fullscreen-on {
-<span id="line862"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTIwIDNoMnY2aC0yVjVoLTRWM2g0ek00IDNoNHYySDR2NEgyVjNoMnptMTYgMTZ2LTRoMnY2aC02di0yaDR6TTQgMTloNHYySDJ2LTZoMnY0eiIgZmlsbD0icmdiYSgyMjksOSwyMCwxKSIvPjwvc3ZnPg==");
-<span id="line863"></span>    }
-<span id="line864"></span>
-<span id="line865"></span>    .jw-svg-icon-fullscreen-off path {
-<span id="line866"></span>      display: none;
-<span id="line867"></span>    }
-<span id="line868"></span>
-<span id="line869"></span>    .jw-svg-icon-fullscreen-off {
-<span id="line870"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE4IDdoNHYyaC02VjNoMnY0ek04IDlIMlY3aDRWM2gydjZ6bTEwIDh2NGgtMnYtNmg2djJoLTR6TTggMTV2Nkg2di00SDJ2LTJoNnoiIGZpbGw9InJnYmEoMjQ3LDI0NiwyNDcsMSkiLz48L3N2Zz4=");
-<span id="line871"></span>      background-size: contain;
-<span id="line872"></span>      background-repeat: no-repeat;
-<span id="line873"></span>    }
-<span id="line874"></span>
-<span id="line875"></span>    .jw-icon-fullscreen:hover .jw-svg-icon-fullscreen-off {
-<span id="line876"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTE4IDdoNHYyaC02VjNoMnY0ek04IDlIMlY3aDRWM2gydjZ6bTEwIDh2NGgtMnYtNmg2djJoLTR6TTggMTV2Nkg2di00SDJ2LTJoNnoiIGZpbGw9InJnYmEoMjI5LDksMjAsMSkiLz48L3N2Zz4=");
-<span id="line877"></span>    }
-<span id="line878"></span>
-<span id="line879"></span>    /* Added New Icons - 06-26-22 */
-<span id="line880"></span>
-<span id="line881"></span>    /* 
-<span id="line882"></span>Icone de Share.
-<span id="line883"></span>*/
-<span id="line884"></span>    .jwplayer.jw-skin-netflix .jw-settings-sharing .jw-svg-icon-sharing path {
-<span id="line885"></span>      display: none;
-<span id="line886"></span>    }
-<span id="line887"></span>
-<span id="line888"></span>    .jwplayer.jw-skin-netflix .jw-settings-sharing .jw-svg-icon-sharing {
-<span id="line889"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTEzLjEyIDE3LjAyM2wtNC4xOTktMi4yOWE0IDQgMCAxIDEgMC01LjQ2NWw0LjItMi4yOWE0IDQgMCAxIDEgLjk1OSAxLjc1NWwtNC4yIDIuMjlhNC4wMDggNC4wMDggMCAwIDEgMCAxLjk1NGw0LjE5OSAyLjI5YTQgNCAwIDEgMS0uOTU5IDEuNzU1ek02IDE0YTIgMiAwIDEgMCAwLTQgMiAyIDAgMCAwIDAgNHptMTEtNmEyIDIgMCAxIDAgMC00IDIgMiAwIDAgMCAwIDR6bTAgMTJhMiAyIDAgMSAwIDAtNCAyIDIgMCAwIDAgMCA0eiIgZmlsbD0icmdiYSgyNDcsMjQ2LDI0NywxKSIvPjwvc3ZnPg==");
-<span id="line890"></span>      background-repeat: no-repeat;
-<span id="line891"></span>      background-position: center;
-<span id="line892"></span>      -webkit-transition: 0.2s;
-<span id="line893"></span>      transition: 0.2s;
-<span id="line894"></span>      background-size: 100%;
-<span id="line895"></span>    }
-<span id="line896"></span>
-<span id="line897"></span>    .jwplayer.jw-skin-netflix .jw-settings-sharing:hover .jw-svg-icon-sharing {
-<span id="line898"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTEzLjEyIDE3LjAyM2wtNC4xOTktMi4yOWE0IDQgMCAxIDEgMC01LjQ2NWw0LjItMi4yOWE0IDQgMCAxIDEgLjk1OSAxLjc1NWwtNC4yIDIuMjlhNC4wMDggNC4wMDggMCAwIDEgMCAxLjk1NGw0LjE5OSAyLjI5YTQgNCAwIDEgMS0uOTU5IDEuNzU1ek02IDE0YTIgMiAwIDEgMCAwLTQgMiAyIDAgMCAwIDAgNHptMTEtNmEyIDIgMCAxIDAgMC00IDIgMiAwIDAgMCAwIDR6bTAgMTJhMiAyIDAgMSAwIDAtNCAyIDIgMCAwIDAgMCA0eiIgZmlsbD0icmdiYSgyMjksOSwyMCwxKSIvPjwvc3ZnPg==");
-<span id="line899"></span>      background-repeat: no-repeat;
-<span id="line900"></span>      background-position: center;
-<span id="line901"></span>      -webkit-transition: 0.2s;
-<span id="line902"></span>      transition: 0.2s;
-<span id="line903"></span>      background-size: 100%;
-<span id="line904"></span>    }
-<span id="line905"></span>
-<span id="line906"></span>    /* 
-<span id="line907"></span>ícone de áudio.
-<span id="line908"></span>*/
-<span id="line909"></span>    .jwplayer.jw-skin-netflix .jw-svg-icon-audio-tracks path {
-<span id="line910"></span>      display: none;
-<span id="line911"></span>    }
-<span id="line912"></span>
-<span id="line913"></span>    .jwplayer.jw-skin-netflix .jw-svg-icon-audio-tracks {
-<span id="line914"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTIgMThoMTB2Mkgydi0yem0wLTdoMTR2Mkgydi0yem0wLTdoMjB2MkgyVjR6bTE3IDExLjE3VjloNXYyaC0zdjdhMyAzIDAgMSAxLTItMi44M3pNMTggMTlhMSAxIDAgMSAwIDAtMiAxIDEgMCAwIDAgMCAyeiIgZmlsbD0icmdiYSgyNDcsMjQ3LDI0NywxKSIvPjwvc3ZnPg==");
-<span id="line915"></span>      background-size: contain;
-<span id="line916"></span>      background-repeat: no-repeat;
-<span id="line917"></span>    }
-<span id="line918"></span>
-<span id="line919"></span>    .jwplayer.jw-skin-netflix
-<span id="line920"></span>      .jwplayer.jw-skin-netflix
-<span id="line921"></span>      .jw-submenu-audioTracks:hover
-<span id="line922"></span>      .jw-svg-icon-audio-tracks {
-<span id="line923"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTIgMThoMTB2Mkgydi0yem0wLTdoMTR2Mkgydi0yem0wLTdoMjB2MkgyVjR6bTE3IDExLjE3VjloNXYyaC0zdjdhMyAzIDAgMSAxLTItMi44M3pNMTggMTlhMSAxIDAgMSAwIDAtMiAxIDEgMCAwIDAgMCAyeiIgZmlsbD0icmdiYSgyMjksOSwyMCwxKSIvPjwvc3ZnPg==");
-<span id="line924"></span>    }
-<span id="line925"></span>
-<span id="line926"></span>    /*
-<span id="line927"></span>Ícone de picture in picture.
-<span id="line928"></span>*/
-<span id="line929"></span>    .jw-svg-icon-pip-on path {
-<span id="line930"></span>      display: none;
-<span id="line931"></span>    }
-<span id="line932"></span>
-<span id="line933"></span>    .jwplayer.jw-skin-netflix .jw-svg-icon-pip-on {
-<span id="line934"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTIxIDNhMSAxIDAgMCAxIDEgMXY3aC0yVjVINHYxNGg2djJIM2ExIDEgMCAwIDEtMS0xVjRhMSAxIDAgMCAxIDEtMWgxOHptMCAxMGExIDEgMCAwIDEgMSAxdjZhMSAxIDAgMCAxLTEgMWgtOGExIDEgMCAwIDEtMS0xdi02YTEgMSAwIDAgMSAxLTFoOHptLTEgMmgtNnY0aDZ2LTR6TTYuNzA3IDYuMjkzbDIuMjUgMi4yNUwxMSA2LjVWMTJINS41bDIuMDQzLTIuMDQzLTIuMjUtMi4yNSAxLjQxNC0xLjQxNHoiIGZpbGw9InJnYmEoMjQ3LDI0NywyNDcsMSkiLz48L3N2Zz4=");
-<span id="line935"></span>      background-size: contain;
-<span id="line936"></span>      background-repeat: no-repeat;
-<span id="line937"></span>    }
-<span id="line938"></span>
-<span id="line939"></span>    .jwplayer.jw-skin-netflix .jw-icon-pip:hover .jw-svg-icon-pip-on {
-<span id="line940"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTIxIDNhMSAxIDAgMCAxIDEgMXY3aC0yVjVINHYxNGg2djJIM2ExIDEgMCAwIDEtMS0xVjRhMSAxIDAgMCAxIDEtMWgxOHptMCAxMGExIDEgMCAwIDEgMSAxdjZhMSAxIDAgMCAxLTEgMWgtOGExIDEgMCAwIDEtMS0xdi02YTEgMSAwIDAgMSAxLTFoOHptLTEgMmgtNnY0aDZ2LTR6TTYuNzA3IDYuMjkzbDIuMjUgMi4yNUwxMSA2LjVWMTJINS41bDIuMDQzLTIuMDQzLTIuMjUtMi4yNSAxLjQxNC0xLjQxNHoiIGZpbGw9InJnYmEoMjI5LDksMjAsMSkiLz48L3N2Zz4=");
-<span id="line941"></span>    }
-<span id="line942"></span>
-<span id="line943"></span>    .jwplayer.jw-skin-netflix .jw-svg-icon-pip-off path {
-<span id="line944"></span>      display: none;
-<span id="line945"></span>    }
-<span id="line946"></span>
-<span id="line947"></span>    .jwplayer.jw-skin-netflix .jw-svg-icon-pip-off {
-<span id="line948"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTIxIDNhMSAxIDAgMCAxIDEgMXY3aC0yVjVINHYxNGg2djJIM2ExIDEgMCAwIDEtMS0xVjRhMSAxIDAgMCAxIDEtMWgxOHptMCAxMGExIDEgMCAwIDEgMSAxdjZhMSAxIDAgMCAxLTEgMWgtOGExIDEgMCAwIDEtMS0xdi02YTEgMSAwIDAgMSAxLTFoOHptLTEgMmgtNnY0aDZ2LTR6bS04LjUtOEw5LjQ1NyA5LjA0M2wyLjI1IDIuMjUtMS40MTQgMS40MTQtMi4yNS0yLjI1TDYgMTIuNVY3aDUuNXoiIGZpbGw9InJnYmEoMjQ3LDI0NywyNDcsMSkiLz48L3N2Zz4=");
-<span id="line949"></span>      background-size: contain;
-<span id="line950"></span>      background-repeat: no-repeat;
-<span id="line951"></span>    }
-<span id="line952"></span>
-<span id="line953"></span>    .jwplayer.jw-skin-netflix .jw-icon-pip:hover .jw-svg-icon-pip-off {
-<span id="line954"></span>      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTIxIDNhMSAxIDAgMCAxIDEgMXY3aC0yVjVINHYxNGg2djJIM2ExIDEgMCAwIDEtMS0xVjRhMSAxIDAgMCAxIDEtMWgxOHptMCAxMGExIDEgMCAwIDEgMSAxdjZhMSAxIDAgMCAxLTEgMWgtOGExIDEgMCAwIDEtMS0xdi02YTEgMSAwIDAgMSAxLTFoOHptLTEgMmgtNnY0aDZ2LTR6bS04LjUtOEw5LjQ1NyA5LjA0M2wyLjI1IDIuMjUtMS40MTQgMS40MTQtMi4yNS0yLjI1TDYgMTIuNVY3aDUuNXoiIGZpbGw9InJnYmEoMjI5LDksMjAsMSkiLz48L3N2Zz4=");
-<span id="line955"></span>    }
-<span id="line956"></span>
-<span id="line957"></span>    /* Buffer Netflix */
-<span id="line958"></span>    .jwplayer.jw-skin-netflix .jw-svg-icon-buffer path {
-<span id="line959"></span>      display: none;
-<span id="line960"></span>    }
-<span id="line961"></span>
-<span id="line962"></span>    .jwplayer.jw-skin-netflix .jw-svg-icon-buffer {
-<span id="line963"></span>      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAACfFBMVEUAAAAAAAC/AADlCBPlCBTlCBPkCBTlCBPVAADkCROqAADiABThAA/bAADkCRPlCBPiBxLkCBTcAAzkCBTfAADkCBPjAADkBxPkCBPMAADkBxHkCBTkCRPjCRPkCRPkCBTlCRPlCBPlCBTRAADlCRPkCRPkBRLkCBPjBhHlCBTlCBTgAArhBxLlCBTkCBPkCRLkCBPfBhPlCBTkCBPkCRTfCBDlCRTlCRLhCRHlCRHkCBTlBxTlCBPbABLjCBTlCBTfABDlCRTkBRCAAADkABLlCRPlCRLkCRLhCA/lBRDkCBPjCBLlCBPiBhHkBxLkCBPjCRTkCRPkCRPlCRTbAAzjCBPlCBTkCBTkCBTkCRTjCRPhBhLlCBPlCRTlCBPlCRPdABHjBxPkCBPiBw/jBhPlCRTkCRPlBxTlCBPjCBLkCRPkCRTlCBTkCBTkCRPkCRPlCBLkCBTlCBPkCBTgCA/kCBPjCBPeAAvkCBTjCBTlCBPkBxLkCRLkCBPkCBPkCRTlCBPkCRPlCRPkCRPlCBPiBRPiBhPkCBPkBxTjBxLjCRPfAAvZAA3kCRTjBw7lCRTlCBPlCRPkCRPkCBPlCBPkBw3jCBTkCBPjCRPlCBPjBxPYABTjBhLkCBPjBxLlCBPjBxLkCBLkBhLjBRPkCRPkCBPjBw7lCRTkCBPlCBPlCBTlCBTgBhPkCRPjABPkCBPkCBTlCRTiCBDlBxPlCBTlCBLlCBPkCBPkCBPiBRTkCBPhBhLlCBPlBxPjCBDlBxPkCRTkCRTlCBLkBxLkBxTkCBTeCBDkCBPjCBTkBxHlCBTkCRPkCRTkBRDjBRPiBhPkBxTlCBLkCBPlCRTfMlk/AAAA03RSTlMAAQT+wvH4/QbwAxoRB+O4RsAW2wj6CWn5Ckz2snbK967fxAuvlTjGLfP0GUW3fFbTKKaXtCDNOjtYqE37DkD1EM4vAhywHXIiMcVl4CxwelrHyOgVncPcmY93K0TpupMPboYjUerlTodj0rOcp5arYbW5giG8XBdmW6WMVdhD0IiQkuTWNVCgaIuUGBTPJefUkbGj4SaAeXikbA1TX4r8b31UNuy7JHV718GbKckbotrMPmvefvKEYDShKtVqP4mOc2JxjUEfXoFLmu/RMDdPZ3+9Zu7L6QAABANJREFUeF7t2FVzXFcQBOC+y2JmZrLFaBKD2ZLMHDtmihliZnaYmZmZmbn/UM7d3bJkWZWHPOT2Q75fMHXqzPTU4N9a9sRdwxEJt0FI6iMLTjEk34KG7vhDlRwxBwr2V8fyBovgvJZD6RyrAw7b0Myb+ZPhqPhcjicXTvpsIcflXg7n3DuR48vbB8dkrEnneHyeuYlwzNEC3qwiO6c1Bs55uMHNsdYtjg/AUaUFHMO3Y7ILzrJypvBGd6RFw2nRYxvQkymQzK8kcTR3cSkE/OjlaHFdUPC2n6PUHoWEdznKe/0uKLBOcpTGKEiwtnJEhMzCvoojZvRBxOe8zv2YCyLu53XeTKioGcnmWbOhojSPYRxMhIqmFQzjrlSoiGlmGHsDkFHCMG5zQcZhhjFbqKq1XoYlJEOG5WFY81ToeIhh66OgY08lQ/KehpC9DNsHITUMWwUhybMYsjkZQuYyJOtjCKmqYEgalGxnyEsWhET5GJReByVLGHIflMxvZ9AbMVCyhiFPQUnMMwx6FVLmMWQapCQwKA5S6jQf63YGvQkt4ZBug5TpDLrHBSm7GfQktGymzb0HUgYYtBBaNjHoALR8RNuUaGgpoC0BWvoYlAPJmC6HYvLEQkwcbecgJpa289CymkHToaWFtiwXtDxKWyHEPEBbCcTcSdvXELODtkyIKaStDmKSaPgDEHOKxjDUrKPxItRE0CiDmiwaO6HmcRp3Q42PxlaouUbjdag5TWMS1JTRyIeanTS2QM2DNFZCzQnJLRAv0OiEmg9orICaD2krgpgMP43ZkNwDJ0NNMY1boGY3je1Qs4GGB2oSaURYmn++HGou0vgUajJp1ENNkU/xSAk8S+M5qOmn8TzUvOYnOQQ5u0i6e6BmnmYspnol7xB4WXPQd0medYGVJL1FUDOBxkzIuUKy1oKagzTOQk3kaZK5kHOWRjzkDEqu9HiLxq2Q00jynWSoaaokWQ05c0i290BN9xDJbMiZnaIZQUtJVqyFGmsLybJIqIkuIPk+5JxJJ92CQ/UAyYplkHOcZFIH1Fj1JPcGoCaQQLLegproYySXQM7lWpI5kJP4CcmlkHPpCMmNkLM/l2SJBTUZxSQnxUBN9xckC+dDTloKGVsKOS3ryZQvLai53EtyYiLkbPKSw/GQ0xdHuhd3QM5XEeS1w5BTdc5NNl6FnDMzyJSLVZDTdoTMO3EJaiIPHiOzvumBnOVx5JRJ31pQU97gJRfNjYKajLZeH/2eOd9BzdTv8yPIzuMTUiHG1fqDp50+z4Wapn9oEpcjpU1P+2nGz6z8Jf/C+QkDqyMRBmvqwLTWX69GFcE5Vb/9/sefDcWDnVeG/sretuDkxur+mZO7AvgP/e9vtgtrs8pPMe8AAAAASUVORK5CYII=");
-<span id="line964"></span>      background-size: contain;
-<span id="line965"></span>      background-repeat: no-repeat;
-<span id="line966"></span>    }
-<span id="line967"></span>  </span><span>&lt;/<span class="end-tag">style</span>&gt;</span><span>
-<span id="line968"></span>    </span><span>&lt;<span class="start-tag">style</span>&gt;</span><span>
-<span id="line969"></span>    html {
-<span id="line970"></span>      font-family: Poppins;
-<span id="line971"></span>      background: #000;
-<span id="line972"></span>      margin: 0;
-<span id="line973"></span>      padding: 0
-<span id="line974"></span>    }
-<span id="line975"></span>
-<span id="line976"></span>    .loading {
-<span id="line977"></span>      position: fixed;
-<span id="line978"></span>      top: 0;
-<span id="line979"></span>      left: 0;
-<span id="line980"></span>      width: 100%;
-<span id="line981"></span>      height: 100%;
-<span id="line982"></span>      background: #000;
-<span id="line983"></span>      z-index: 9999;
-<span id="line984"></span>    }
-<span id="line985"></span>
-<span id="line986"></span>    .loading-text {
-<span id="line987"></span>      position: absolute;
-<span id="line988"></span>      top: 0;
-<span id="line989"></span>      bottom: 0;
-<span id="line990"></span>      left: 0;
-<span id="line991"></span>      right: 0;
-<span id="line992"></span>      margin: auto;
-<span id="line993"></span>      text-align: center;
-<span id="line994"></span>      width: 100%;
-<span id="line995"></span>      height: 100px;
-<span id="line996"></span>      line-height: 100px;
-<span id="line997"></span>      font-size:40px;
-<span id="line998"></span>      
-<span id="line999"></span>    }
-<span id="line1000"></span>
-<span id="line1001"></span>    .loading-text span {
-<span id="line1002"></span>      display: inline-block;
-<span id="line1003"></span>      margin: 0 5px;
-<span id="line1004"></span>      color: #ffa501;
-<span id="line1005"></span>      font-family: 'Quattrocento Sans', sans-serif;
-<span id="line1006"></span>    }
-<span id="line1007"></span>
-<span id="line1008"></span>    .loading-text span:nth-child(1) {
-<span id="line1009"></span>      filter: blur(0px);
-<span id="line1010"></span>      animation: blur-text 1.5s 0s infinite linear alternate;
-<span id="line1011"></span>    }
-<span id="line1012"></span>
-<span id="line1013"></span>    .loading-text span:nth-child(2) {
-<span id="line1014"></span>      filter: blur(0px);
-<span id="line1015"></span>      animation: blur-text 1.5s 0.2s infinite linear alternate;
-<span id="line1016"></span>    }
-<span id="line1017"></span>
-<span id="line1018"></span>    .loading-text span:nth-child(3) {
-<span id="line1019"></span>      filter: blur(0px);
-<span id="line1020"></span>      animation: blur-text 1.5s 0.4s infinite linear alternate;
-<span id="line1021"></span>    }
-<span id="line1022"></span>
-<span id="line1023"></span>    .loading-text span:nth-child(4) {
-<span id="line1024"></span>      filter: blur(0px);
-<span id="line1025"></span>      animation: blur-text 1.5s 0.6s infinite linear alternate;
-<span id="line1026"></span>    }
-<span id="line1027"></span>
-<span id="line1028"></span>    .loading-text span:nth-child(5) {
-<span id="line1029"></span>      filter: blur(0px);
-<span id="line1030"></span>      animation: blur-text 1.5s 0.8s infinite linear alternate;
-<span id="line1031"></span>    }
-<span id="line1032"></span>
-<span id="line1033"></span>    .loading-text span:nth-child(6) {
-<span id="line1034"></span>      filter: blur(0px);
-<span id="line1035"></span>      animation: blur-text 1.5s 1s infinite linear alternate;
-<span id="line1036"></span>    }
-<span id="line1037"></span>
-<span id="line1038"></span>    .loading-text span:nth-child(7) {
-<span id="line1039"></span>      filter: blur(0px);
-<span id="line1040"></span>      animation: blur-text 1.5s 1.2s infinite linear alternate;
-<span id="line1041"></span>    }
-<span id="line1042"></span>
-<span id="line1043"></span>    .loading-text span:nth-child(8) {
-<span id="line1044"></span>      filter: blur(0px);
-<span id="line1045"></span>      animation: blur-text 1.5s 1.4s infinite linear alternate;
-<span id="line1046"></span>    }
-<span id="line1047"></span>
-<span id="line1048"></span>    .loading-text span:nth-child(9) {
-<span id="line1049"></span>      filter: blur(0px);
-<span id="line1050"></span>      animation: blur-text 1.5s 1.6s infinite linear alternate;
-<span id="line1051"></span>    }
-<span id="line1052"></span>
-<span id="line1053"></span>    .loading-text span:nth-child(10) {
-<span id="line1054"></span>      filter: blur(0px);
-<span id="line1055"></span>      animation: blur-text 1.5s 1.2s infinite linear alternate;
-<span id="line1056"></span>    }
-<span id="line1057"></span>
-<span id="line1058"></span>    @keyframes blur-text {
-<span id="line1059"></span>      0% {
-<span id="line1060"></span>        filter: blur(0px);
-<span id="line1061"></span>      }
-<span id="line1062"></span>
-<span id="line1063"></span>      100% {
-<span id="line1064"></span>        filter: blur(4px);
-<span id="line1065"></span>      }
-<span id="line1066"></span>    }
-<span id="line1067"></span>  </span><span>&lt;/<span class="end-tag">style</span>&gt;</span><span>
-<span id="line1068"></span>  </span><span>&lt;/<span class="end-tag">head</span>&gt;</span><span>
-<span id="line1069"></span>  
-<span id="line1070"></span>  </span><span>&lt;<span class="start-tag">body</span>&gt;</span><span>
-<span id="line1071"></span>    </span><span>&lt;<span class="start-tag">style</span>&gt;</span><span>
-<span id="line1072"></span>      #player {
-<span id="line1073"></span>        position: absolute;
-<span id="line1074"></span>        width: 100% !important;
-<span id="line1075"></span>        height: 100% !important;
-<span id="line1076"></span>      }
-<span id="line1077"></span>    </span><span>&lt;/<span class="end-tag">style</span>&gt;</span><span>
-<span id="line1078"></span>Error: Channel with id  not found.
-<span id="line1079"></span>    </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">player</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
-<span id="line1080"></span>
-<span id="line1081"></span>    </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://content.jwplatform.com/libraries/KB5zFt7A.js">https://content.jwplatform.com/libraries/KB5zFt7A.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line1082"></span>    </span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
-<span id="line1083"></span>      const playerInstance = jwplayer("player").setup({
-<span id="line1084"></span>        controls: true,
-<span id="line1085"></span>        sharing: true,
-<span id="line1086"></span>        displaytitle: true,
-<span id="line1087"></span>        autostart: false,
-<span id="line1088"></span>        stretching: "exactfit",
-<span id="line1089"></span>        displaydescription: true,
-<span id="line1090"></span>        abouttext: "Video Player By Cinemad",
-<span id="line1091"></span>        aboutlink: "https://madstream.in",
-<span id="line1092"></span>
-<span id="line1093"></span>        skin: {
-<span id="line1094"></span>          name: "netflix",
-<span id="line1095"></span>        },
-<span id="line1096"></span>
-<span id="line1097"></span>        logo: {
-<span id="line1098"></span>          file: "https://madstream.in/uploads/png/b6fe0c3f659e04aa7d07836abbc5c1d6.png",
-<span id="line1099"></span>          link: "https://madstream.in",
-<span id="line1100"></span>        },
-<span id="line1101"></span>
-<span id="line1102"></span>        captions: {
-<span id="line1103"></span>          color: "#FFF",
-<span id="line1104"></span>          fontSize: 14,
-<span id="line1105"></span>          backgroundOpacity: 0,
-<span id="line1106"></span>          edgeStyle: "raised",
-<span id="line1107"></span>        },
-<span id="line1108"></span>
-<span id="line1109"></span>        playlist: [
-<span id="line1110"></span>          {
-<span id="line1111"></span>            title: "",
-<span id="line1112"></span>            description: "You're Watching",
-<span id="line1113"></span>            image:"",
-<span id="line1114"></span>            sources: [
-<span id="line1115"></span>              {
-<span id="line1116"></span>                file: "",
-<span id="line1117"></span>                drm: {
-<span id="line1118"></span>                    clearkey: {
-<span id="line1119"></span>                        key: "",
-<span id="line1120"></span>                        keyId: ""
-<span id="line1121"></span>                    }
-<span id="line1122"></span>                },
-<span id="line1123"></span>              },
-<span id="line1124"></span>            ],
-<span id="line1125"></span>          },
-<span id="line1126"></span>        ],
-<span id="line1127"></span>      });
-<span id="line1128"></span>    </span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line1129"></span>    </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">loading</a>" <span class="attribute-name">class</span>="<a class="attribute-value">loading</a>"&gt;</span><span>
-<span id="line1130"></span>      </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">loading-text</a>"&gt;</span><span>
-<span id="line1131"></span>        </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">loading-text-words</a>"&gt;</span><span>C</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
-<span id="line1132"></span>        </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">loading-text-words</a>"&gt;</span><span>I</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
-<span id="line1133"></span>        </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">loading-text-words</a>"&gt;</span><span>N</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
-<span id="line1134"></span>        </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">loading-text-words</a>"&gt;</span><span>E</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
-<span id="line1135"></span>        </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">loading-text-words</a>"&gt;</span><span>M</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
-<span id="line1136"></span>        </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">loading-text-words</a>"&gt;</span><span>A</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
-<span id="line1137"></span>        </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">loading-text-words</a>"&gt;</span><span>D</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
-<span id="line1138"></span>      </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
-<span id="line1139"></span>    </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
-<span id="line1140"></span>    </span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
-<span id="line1141"></span>      setTimeout(videovisible, 2500)
-<span id="line1142"></span>      function videovisible() {
-<span id="line1143"></span>        document.getElementById('loading').style.display = 'none'
-<span id="line1144"></span>      }
-<span id="line1145"></span>    </span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line1146"></span>        </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">disable-devtool-auto</span> <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:https://cdn.jsdelivr.net/npm/disable-devtool">https://cdn.jsdelivr.net/npm/disable-devtool</a>' <span class="attribute-name">clear-log</span>="<a class="attribute-value">true</a>" <span class="attribute-name">disable-select</span>="<a class="attribute-value">true</a>" <span class="attribute-name">disable-copy</span>="<a class="attribute-value">true</a>" <span class="attribute-name">disable-cut</span>="<a class="attribute-value">true</a>" <span class="attribute-name">disable-paste</span>="<a class="attribute-value">true</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line1147"></span>    
-<span id="line1148"></span>     </span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
-<span id="line1149"></span>(function(__htavim){
-<span id="line1150"></span>var d = document,
-<span id="line1151"></span>    s = d.createElement('script'),
-<span id="line1152"></span>    l = d.scripts[d.scripts.length - 1];
-<span id="line1153"></span>s.settings = __htavim || {};
-<span id="line1154"></span>s.src = "\/\/odd-improvement.com\/dpm\/Fqz.dwGHlZtpPV3ipsvxbNm\/VXJlZsDu0j1SMJz\/AMzaMuD\/IX3ALaTiUyzpMfDqM-wsMnjagW";
-<span id="line1155"></span>s.async = true;
-<span id="line1156"></span>l.parentNode.insertBefore(s, l);
-<span id="line1157"></span>})()
-<span id="line1158"></span>    </span><span>&lt;s</span><span>cript&gt;
-<span id="line1159"></span>(function(asbwe){
-<span id="line1160"></span>var d = document,
-<span id="line1161"></span>    s = d.createElement('script'),
-<span id="line1162"></span>    l = d.scripts[d.scripts.length - 1];
-<span id="line1163"></span>s.settings = asbwe || {};
-<span id="line1164"></span>s.src = "\/\/odd-improvement.com\/c\/D.9a6tbt2m5KluS\/WoQu9cNtT_ESyzN\/z\/Q\/z-OsC\/0d1IMlTBIZ3gNwDdM\/5b";
-<span id="line1165"></span>s.async = true;
-<span id="line1166"></span>l.parentNode.insertBefore(s, l);
-<span id="line1167"></span>})({})
-<span id="line1168"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line1169"></span>
-<span id="line1170"></span></span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
-<span id="line1171"></span>(function(__htavim){
-<span id="line1172"></span>var d = document,
-<span id="line1173"></span>    s = d.createElement('script'),
-<span id="line1174"></span>    l = d.scripts[d.scripts.length - 1];
-<span id="line1175"></span>s.settings = __htavim || {};
-<span id="line1176"></span>s.src = "\/\/odd-improvement.com\/d\/m.FczOdTGjlRtWPA3vptvGbPmzV-JXZqD\/0O1_MdT\/ID3YNGDbQB2ILWTnUfxdMbjKco0dNWDXcR";
-<span id="line1177"></span>s.async = true;
-<span id="line1178"></span>l.parentNode.insertBefore(s, l);
-<span id="line1179"></span>})()
-<span id="line1180"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line1181"></span>
-<span id="line1182"></span></span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
-<span id="line1183"></span>(function(apkrj){
-<span id="line1184"></span>var d = document,
-<span id="line1185"></span>    s = d.createElement('script'),
-<span id="line1186"></span>    l = d.scripts[d.scripts.length - 1];
-<span id="line1187"></span>s.settings = apkrj || {};
-<span id="line1188"></span>s.src = "\/\/glum-mortgage.com\/a.WO5lwdYJWkdvlGQJ2x9oklZcTC9\/6_bL2\/5qlbSPWUQF9iNrTPEmyaNSzXQ\/0tOgCm0r1jMnTMIh3KN_DtQH5o";
-<span id="line1189"></span>s.async = true;
-<span id="line1190"></span>l.parentNode.insertBefore(s, l);
-<span id="line1191"></span>})({})
-<span id="line1192"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line1193"></span>
-<span id="line1194"></span></span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
-<span id="line1195"></span>(function(s){
-<span id="line1196"></span>var d = document,
-<span id="line1197"></span>    s = d.createElement('script'),
-<span id="line1198"></span>    l = d.scripts[d.scripts.length - 1];
-<span id="line1199"></span>s.settings = s || {};
-<span id="line1200"></span>s.src = "\/\/glum-mortgage.com\/bzX.VpsHd\/GvlF0xY_WBcS\/ieNmk9ou\/ZEUYlkk\/P_TJUexUMXjicW0JN\/jAY-tiNnTjEaycNtzvQs2XNXwt";
-<span id="line1201"></span>s.async = true;
-<span id="line1202"></span>l.parentNode.insertBefore(s, l);
-<span id="line1203"></span>})({})
-<span id="line1204"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line1205"></span>
-<span id="line1206"></span></span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
-<span id="line1207"></span>(function(wchdh){
-<span id="line1208"></span>var d = document,
-<span id="line1209"></span>    s = d.createElement('script'),
-<span id="line1210"></span>    l = d.scripts[d.scripts.length - 1];
-<span id="line1211"></span>s.settings = wchdh || {};
-<span id="line1212"></span>s.src = "\/\/glum-mortgage.com\/bKX.Vfs\/deGglE0qYMWEd\/icYbWu5qu\/ZFX-Is\/jeHmT9juNZtU\/lckuPaTRU\/xaMRj-cK0vOVDHQbtkNCTFEVyiNDzsQl4nN\/QE";
-<span id="line1213"></span>s.async = true;
-<span id="line1214"></span>l.parentNode.insertBefore(s, l);
-<span id="line1215"></span>})({})
-<span id="line1216"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line1217"></span>  </span><span>&lt;/<span class="end-tag">body</span>&gt;</span><span>
-<span id="line1218"></span></span><span>&lt;/<span class="end-tag">html</span>&gt;</span><span>
-<span id="line1219"></span></span></pre></body></html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>Cinemad TV</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    <meta name="9475f2dbe451270d183769ea003da792ff72cbc2" content="9475f2dbe451270d183769ea003da792ff72cbc2" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        #jtvh1 {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            font-family: 'Holtwood One SC', serif !important;
+        }
+        .navbar {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            justify-content: center;
+            display:flex;
+            align-items:center;
+           
+        }
+
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #f50057; /* Pink color */
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+             position:relative;
+            left:40%;
+        }
+
+        .navbar-brand span {
+            color: #ff6f00; /* Orange color */
+        }
+
+       
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .search {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        #search, #groupSelect {
+            width: 100%;
+            max-width: 400px;
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            width: 180px;
+            height: 220px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+        }
+        .card img {
+            width: 90%;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .info span {
+            font-size: 15px;
+            color: black;
+        }
+        .load-more-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .load-more-btn:hover {
+            background-color: #0056b3;
+        }
+        @media only screen and (max-width: 1200px) {
+            .card {
+                width: 150px;
+                height: 150px;
+            }
+            .card img {
+                width: 80%;
+                height: auto;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 10px;
+            }
+            .info span {
+                font-size: 13px;
+                color: black;
+            }
+        }
+        @media only screen and (max-width: 992px) {
+            .card {
+                width: 150px;
+                height: 150px;
+            }
+            .card img {
+                width: 70%;
+                height: auto;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 10px;
+            }
+            .navbar-brand {
+           
+             position:relative;
+            left:25%;
+        }
+        }
+        @media only screen and (max-width: 768px) {
+            .card {
+                width: 150px;
+                height: 150px;
+            }
+            .card img {
+                width: 60%;
+                height: auto;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 10px;
+            }
+        }
+        @media only screen and (max-width: 576px) {
+            .card {
+                width: 150px;
+                height: 150px;
+            }
+            .navbar-brand {
+           
+             position:relative;
+            left:25%;
+        }
+            .card img {
+                width: 50%;
+                height: auto;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="https://madstream.in/">Cinemad <span>TV</span></a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="search">
+            <input id="search" type="text" placeholder="Search Your Channel">
+            <select id="groupSelect">
+                <option value="">All</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Movies">Movies</option>
+                <option value="Music">Music</option>
+                <option value="Sports">Sports</option>
+                <option value="News">News</option>
+                <option value="Kids">Kids</option>
+                <option value="Knowledge">Knowledge</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Bengali">Regional Bengali</option>
+                <option value="Gujarati">Regional Gujarati</option>
+                <option value="Hindi">Regional Hindi</option>
+                <option value="Kannada">Regional Kannada</option>
+                <option value="Malayalam">Regional Malayalam</option>
+                <option value="Marathi">Regional Marathi</option>
+                <option value="Odia">Regional Odia</option>
+                <option value="Others">Regional Others</option>
+                <option value="Punjabi">Regional Punjabi</option>
+                <option value="Tamil">Regional Tamil</option>
+                <option value="Telugu">Regional Telugu</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Spiritual">Spiritual</option>
+                <option value="Null">Others</option>
+                <option value="Sports">Sports</option>
+            </select>
+        </div>
+    </div>
+    <div id="content" class="container">
+        <div id="playlist" class="row"></div>
+        <button id="loadMoreBtn" class="load-more-btn">Load More</button>
+    </div>
+    <script>
+        fetch("static/data/playlist.json")
+            .then(response => response.json())
+            .then(playlist => {
+                const playlistDiv = document.getElementById("playlist");
+                const loadMoreBtn = document.getElementById("loadMoreBtn");
+                const searchInput = document.getElementById("search");
+                const selectElement = document.getElementById("groupSelect");
+                const itemsPerPage = 30; // Number of items to display per page
+                let currentPage = 1; // Current page
+                let currentGroup = ''; // Current group filter
+                let currentSearch = ''; // Current search term
+
+                const renderItems = (items) => {
+                    items.forEach(item => {
+                        const columnDiv = document.createElement("div");
+                        columnDiv.classList.add("col-6", "col-sm-4", "col-md-3", "col-lg-2");
+                        const cardLink = document.createElement("a");
+                        cardLink.href = `play.php?id=${item.id}`;
+                        cardLink.target = "_blank";
+                        const cardDiv = document.createElement("div");
+                        cardDiv.classList.add("card");
+
+                        const logoImg = document.createElement("img");
+                        logoImg.src = item.logo;
+                        cardDiv.appendChild(logoImg);
+
+                        const infoDiv = document.createElement("div");
+                        infoDiv.classList.add("info");
+
+                        const nameSpan = document.createElement("span");
+                        nameSpan.textContent = item.name;
+                        infoDiv.appendChild(nameSpan);
+
+                        cardDiv.appendChild(infoDiv);
+                        cardLink.appendChild(cardDiv);
+                        columnDiv.appendChild(cardLink);
+                        playlistDiv.appendChild(columnDiv);
+                    });
+                };
+
+                const filterAndRender = (clear = true) => {
+                    if (clear) {
+                        playlistDiv.innerHTML = ''; // Clear existing items
+                        currentPage = 1; // Reset to the first page
+                    }
+
+                    const filteredPlaylist = playlist.filter(item => {
+                        const matchesGroup = !currentGroup || item.group === currentGroup;
+                        const matchesSearch = !currentSearch || item.name.toLowerCase().includes(currentSearch);
+                        return matchesGroup && matchesSearch;
+                    });
+
+                    const startIndex = (currentPage - 1) * itemsPerPage;
+                    const endIndex = startIndex + itemsPerPage;
+
+                    renderItems(filteredPlaylist.slice(startIndex, endIndex));
+
+                    if (currentPage * itemsPerPage >= filteredPlaylist.length) {
+                        loadMoreBtn.style.display = "none";
+                    } else {
+                        loadMoreBtn.style.display = "block";
+                    }
+                };
+
+                loadMoreBtn.addEventListener("click", () => {
+                    currentPage++;
+                    filterAndRender(false);
+                });
+
+                searchInput.addEventListener("input", () => {
+                    currentSearch = searchInput.value.toLowerCase();
+                    filterAndRender();
+                });
+
+                selectElement.addEventListener("change", (event) => {
+                    currentGroup = event.target.value;
+                    filterAndRender();
+                });
+
+                filterAndRender();
+            })
+            .catch(error => console.error(error));
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
