@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -204,8 +203,8 @@
                 <option value="Entertainment">Entertainment</option>
                 <option value="Movies">Movies</option>
                 <option value="Music">Music</option>
-                <option value="Sports">Sports</option>
                 <option value="News">News</option>
+                <option value="Sports">Sports</option>
                 <option value="Kids">Kids</option>
                 <option value="Knowledge">Knowledge</option>
                 <option value="Lifestyle">Lifestyle</option>
@@ -223,16 +222,17 @@
                 <option value="Shopping">Shopping</option>
                 <option value="Spiritual">Spiritual</option>
                 <option value="Null">Others</option>
-                <option value="Sports">Sports</option>
+                
             </select>
         </div>
     </div>
     <div id="content" class="container">
+        </div>
         <div id="playlist" class="row"></div>
         <button id="loadMoreBtn" class="load-more-btn">Load More</button>
     </div>
     <script>
-        fetch("https://channels-json.deno.dev/playlist.json")
+        fetch("static/data/playlist.json")
             .then(response => response.json())
             .then(playlist => {
                 const playlistDiv = document.getElementById("playlist");
@@ -249,7 +249,7 @@
                         const columnDiv = document.createElement("div");
                         columnDiv.classList.add("col-6", "col-sm-4", "col-md-3", "col-lg-2");
                         const cardLink = document.createElement("a");
-                        cardLink.href = `play-php/index.html?id=${item.id}`;
+                        cardLink.href = `play.php?id=${item.id}`;
                         cardLink.target = "_blank";
                         const cardDiv = document.createElement("div");
                         cardDiv.classList.add("card");
@@ -317,6 +317,6 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
+    
 </body>
 </html>
