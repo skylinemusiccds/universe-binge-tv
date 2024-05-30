@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Player</title>
+  <meta name="9475f2dbe451270d183769ea003da792ff72cbc2" content="9475f2dbe451270d183769ea003da792ff72cbc2">
+  <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+  <style>
+    #player {
+      position: absolute;
+      width: 100% !important;
+      height: 100% !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="player"></div>
+
+  <script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const channelId = urlParams.get('id');
+
+    // Fetch playlist data (replace with actual fetch implementation)
+    fetch("https://universe-cors.deno.dev/https://channels-json.deno.dev/playlistt.json")
+      .then(response => response.json())
+      .then(playlist => {
+        // Find channel object by ID (replace with actual logic)
+        const channel = playlist.find(item => item.id === channelId);
+
+        if (channel) {
+          const playerInstance = jwplayer("player").setup({
+            controls: true,
+            sharing: true,
+            displaytitle: true,
+            autostart: false,
+            stretching: "exactfit",
+            displaydescription: true,
+            abouttext: "",
+            aboutlink: "",
+
+            captions: {
+              color: "#FFF",
+              fontSize: 14,
+              backgroundOpacity: 0,
+              edgeStyle: "raised",
+            },
+
+            playlist: [{
+              title: channel.name,
+              description: "Live Stream",
+              image: channel.logo,
+              sources: [
+                {
+                  file: channel.url, // Assuming HLS stream
+                  // Add DRM configuration if required (replace with actual logic)
+                  drm: {
+                     clearkey: {
+                       key: channel.k, // Implement logic to get key
+                       keyId: channel.kid, // Replace with actual key ID
+                     }
+                   }
+                }
+              ]
+            }]
+          });
+        } else {
+          // Handle error: Channel not found
+          console.error("Channel with ID", channelId, "not found");
+          // You can display an error message to the user here
+        }
+      })
+      .catch(error => console.error(error));
+
+    // Optional: Loading screen logic (replace with your desired implementation)
+    const loadingElement = document.createElement('div');
+    loadingElement.id = 'loading';
+    loadingElement.classList.add('loading');
+    const loadingText = document.createElement('div');
+    loadingText.classList.add('loading-text');
+    for (let i = 0; i < 8; i++) {
+      const span = document.createElement('span');
+      span.classList.add('loading-text-words');
+      loadingText.appendChild(span);
+    }
+    loadingElement.appendChild(loadingText);
+    document.body.appendChild(loadingElement);
+
+    setTimeout(() => {
+      loadingElement.style.display = 'none';
+    }, 2500);
+  </script>
+</body>
+
+</html>
