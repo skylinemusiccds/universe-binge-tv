@@ -33,13 +33,12 @@
         if (channel) {
           const playerInstance = jwplayer("player").setup({
             controls: true,
-            sharing: true,
             displaytitle: true,
-            autostart: false,
+            autostart: true,
             stretching: "exactfit",
             displaydescription: true,
-            abouttext: "",
-            aboutlink: "",
+            //abouttext: "",
+            //aboutlink: "",
 
             captions: {
               color: "#FFF",
@@ -54,8 +53,7 @@
               image: channel.logo,
               sources: [
                 {
-                  file: channel.url, // Assuming HLS stream
-                  // Add DRM configuration if required (replace with actual logic)
+                  file: channel.url, // Assuming HLS stream Add DRM configuration if required (replace with actual logic)
                   drm: {
                      clearkey: {
                        key: channel.k, // Implement logic to get key
@@ -73,9 +71,13 @@
         }
       })
       .catch(error => console.error(error));
+    </script>
+</body>
+
+</html>
 
     // Optional: Loading screen logic (replace with your desired implementation)
-    const loadingElement = document.createElement('div');
+   /*const loadingElement = document.createElement('div');
     loadingElement.id = 'loading';
     loadingElement.classList.add('loading');
     const loadingText = document.createElement('div');
@@ -86,12 +88,9 @@
       loadingText.appendChild(span);
     }
     loadingElement.appendChild(loadingText);
-    document.body.appendChild(loadingElement);
+    document.body.appendChild(loadingElement);*/
 
     setTimeout(() => {
       loadingElement.style.display = 'none';
-    }, 2500);
-  </script>
-</body>
-
-</html>
+    }, 2500);*/
+  
