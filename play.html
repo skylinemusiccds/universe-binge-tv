@@ -129,7 +129,7 @@
         const urlParams = new URLSearchParams(queryString);
         const channelId = urlParams.get('id');
 
-        fetch("https://universe-cors.deno.dev/https://channels-json.deno.dev/playlist.json")
+        fetch("https://universe-cors.deno.dev/https://universe-channels.deno.dev/playlist.json")
             .then(response => response.json())
             .then(playlist => {
                 const channel = playlist.find(item => item.id === channelId);
@@ -160,13 +160,13 @@
                         playlist: [{
                             title: channel.name,
                             description: "You're Watching",
-                            image: channel.logo,
+                            image: channel.logo_url,
                             sources: [{
-                                file: channel.url+"?begin=20240525T010000&end=20240630T160000",
+                                file: channel.manifest_url,
                                 drm: {
                                     clearkey: {
-                                        key: channel.k,
-                                        keyId: channel.kid,
+                                        key: channel.clearkeys.key,
+                                        keyId: channel.clearkeys.keyId,
                                     }
                                 }
                             }]
