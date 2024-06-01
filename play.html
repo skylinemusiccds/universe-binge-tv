@@ -162,7 +162,7 @@
                             description: "You're Watching",
                             image: channel.logo_url,
                             sources: [{
-                                file: channel.manifest_url,
+                                file: "https://channel-mpd.deno.dev/"+channel.id+".mpd",
                                 drm: {
                                     clearkey: {
                                         key: channel.clearkeys.key,
