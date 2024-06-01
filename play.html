@@ -131,8 +131,8 @@
 
         fetch("https://universe-cors.deno.dev/https://universe-channels.deno.dev/playlist.json")
             .then(response => response.json())
-            .then(playlist => {
-                const channel = playlist.find(item => item.id === channelId);
+            .then(data => {
+                const channel = data.data.channels.find(item => item.id === channelId);
 
                 if (channel) {
                     const playerInstance = jwplayer("player").setup({
