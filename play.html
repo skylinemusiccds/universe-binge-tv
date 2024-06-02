@@ -24,7 +24,7 @@
         fetch("https://universe-cors.deno.dev/https://universe-playlist.deno.dev/channels.json")
             .then(response => response.json())
             .then(data => {
-                const channel = data.data.channels.find(item => item.id === channelId);
+                const channel = data.find(item => item.id === channelId);
 
                 if (channel) {
                     const playerInstance = jwplayer("player").setup({
@@ -46,14 +46,15 @@
                             {
                                 title: channel.name,
                                 description: "",
-                                image: channel.logo_url,
+                                image: channel.logo,
                                 sources: [
                                     {
-                                        file: channel.manifest_url,
+                                        file: channel.url,
                                         drm: {
-                                            clearkey: {
-                                                key: channel.clearkeys.key,
-                                                keyId: channel.clearkeys.keyId,
+                                            widevine: {
+                                                licenseUrl: channel.license_key,
+                                                key: channel.k,
+                                                keyId: channel.kid,
                                             }
                                         },
                                     },
