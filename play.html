@@ -3,64 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Channel List</title>
+    <title>Play Channel</title>
+    <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
 </head>
 <body>
-    <h1>Channel List</h1>
-    <div id="channelList"></div>
+    <div id="loading">Loading...</div>
+    <div id="player"></div>
 
     <script>
-        function loadChannelList() {
-            fetch("https://universe-cors.deno.dev/https://iptv-universe.vercel.app/api/playlist.m3u")
-                .then(response => response.text())
-                .then(playlist => {
-                    const channels = extractChannels(playlist);
-                    const channelListDiv = document.getElementById('channelList');
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const channelId = urlParams.get('id');
 
-                    channels.forEach(channel => {
-                        const channelLink = document.createElement('a');
-                        channelLink.href = `play.html?id=${channel.id}`;
-                        channelLink.textContent = channel.name;
-                        channelLink.style.display = 'block';
-                        channelListDiv.appendChild(channelLink);
+        fetch("https://universe-cors.deno.dev/https://iptv-universe.vercel.app/api/playlist.m3u")
+            .then(response => response.text())
+            .then(playlist => {
+                const channelURL = getChannelURL(playlist, channelId);
+
+                if (channelURL) {
+                    const playerInstance = jwplayer("player").setup({
+                        controls: true,
+                        autostart: true,
+                        stretching: "exactfit",
+                        playlist: [{
+                            sources: [{
+                                file: channelURL
+                            }]
+                        }]
                     });
-                })
-                .catch(error => {
-                    console.error(error);
-                    alert('Error loading channel list. Please try again later.');
-                });
-        }
 
-        function extractChannels(playlist) {
+                    playerInstance.on('ready', () => {
+                        document.getElementById('loading').style.display = 'none';
+                    });
+                } else {
+                    console.error("Channel with ID", channelId, "not found");
+                    document.getElementById('loading').textContent = "Channel not found";
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                document.getElementById('loading').textContent = "Error loading channel";
+            });
+
+        function getChannelURL(playlist, channelId) {
             const lines = playlist.split('\n');
-            const channels = [];
 
-            let currentChannel = null;
-
-            for (const line of lines) {
-                if (line.startsWith('#EXTINF')) {
-                    const idMatch = line.match(/tvg-id="(\d+)"/);
-                    const nameMatch = line.match(/,(.*)/);
-                    
-                    if (idMatch && nameMatch) {
-                        currentChannel = {
-                            id: idMatch[1],
-                            name: nameMatch[1].trim()
-                        };
-                    }
-                } else if (line.trim() && !line.startsWith('#')) {
-                    if (currentChannel) {
-                        currentChannel.url = line.trim();
-                        channels.push(currentChannel);
-                        currentChannel = null;
-                    }
+            for (let i = 0; i < lines.length; i++) {
+                if (lines[i].includes(`tvg-id="${channelId}"`)) {
+                    return lines[i + 1].trim();
                 }
             }
 
-            return channels;
+            return null;
         }
-
-        loadChannelList();
     </script>
 </body>
 </html>
