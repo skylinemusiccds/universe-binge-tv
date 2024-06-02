@@ -1,78 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Channel</title>
+    <title>Video Player</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        #player {
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+        }
+        .video-container iframe,
+        .video-container video {
             position: absolute;
-            width: 100% !important;
-            height: 100% !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #http-warning {
+            display: none;
+            color: red;
+            margin-top: 10px;
         }
     </style>
 </head>
-<body>
-    <div id="player"></div>
+<body onload="init(); check();">
 
-    <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
-    <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const channelId = urlParams.get('id');
+<div class="container">
+    <h1 class="text-center">UniVerse Binge TV Player</h1>
+    <div class="video-container">
+        <video controls></video>
+    </div>
+    <div id="http-warning"></div>
+</div>
 
-        fetch("https://universe-cors.deno.dev/https://universe-playlist.deno.dev/channels.json")
+<script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+<script>
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    function init() {
+        const videoId = getQueryParam('id');
+        fetch('https://universe-cors.deno.dev/https://channels-json.deno.dev/playlist.json')
             .then(response => response.json())
             .then(data => {
-                const channel = data.find(item => item.id === channelId);
-
-                if (channel) {
-                    const playerInstance = jwplayer("player").setup({
-                        controls: true,
-                        sharing: true,
-                        displaytitle: true,
-                        autostart: false,
-                        stretching: "exactfit",
-                        displaydescription: true,
-
-                        captions: {
-                            color: "#FFF",
-                            fontSize: 14,
-                            backgroundOpacity: 0,
-                            edgeStyle: "raised",
-                        },
-
-                        playlist: [
-                            {
-                                title: channel.name,
-                                description: "",
-                                image: channel.logo,
-                                sources: [
-                                    {
-                                        file: channel.url,
-                                        drm: {
-                                            widevine: {
-                                                licenseUrl: channel.license_key,
-                                                key: channel.k,
-                                                keyId: channel.kid,
-                                            }
-                                        },
-                                    },
-                                ],
-                            },
-                        ],
-                    });
-
-                    playerInstance.on('ready', () => {
-                        console.log('Player ready');
-                    });
-                } else {
-                    console.error("Channel with ID", channelId, "not found");
+                const channel = data.data.channels.find(channel => channel.id === videoId);
+                if (!channel) {
+                    alert('Channel not found');
+                    return;
                 }
+
+                const protData = {
+                    "org.w3.clearkey": {
+                        "clearkeys": {}
+                    }
+                };
+                if (channel.clearkeys) {
+                    const clearkeyId = Object.keys(channel.clearkeys)[0];
+                    const clearkey = channel.clearkeys[clearkeyId];
+                    protData["org.w3.clearkey"]["clearkeys"][clearkeyId] = clearkey;
+                }
+
+                const video = document.querySelector("video");
+                const player = dashjs.MediaPlayer().create();
+                player.initialize(video, channel.manifest_url, true);
+                player.setProtectionData(protData);
             })
-            .catch(error => {
-                console.error("Error loading channel data:", error);
-            });
-    </script>
+            .catch(error => console.error('Error fetching the playlist:', error));
+    }
+
+    function check() {
+        if (location.protocol === 'http:' && location.hostname !== 'localhost') {
+            const out = 'This page has been loaded under http. This might result in the EME APIs not being available to the player and any DRM-protected content will fail to play. ' +
+                'If you wish to test manifest URLs that require EME support, then <a href=\'https:' + window.location.href.substring(window.location.protocol.length) + '\'>reload this page under https</a>.';
+            const div = document.getElementById('http-warning');
+            div.innerHTML = out;
+            div.style.display = 'block';
+        }
+    }
+</script>
 </body>
 </html>
