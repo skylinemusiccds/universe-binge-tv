@@ -57,6 +57,11 @@
 
     function init() {
         const videoId = getQueryParam('id');
+        if (!videoId) {
+            alert('No video ID provided');
+            return;
+        }
+
         fetch('https://universe-cors.deno.dev/https://channels-json.deno.dev/playlist.json')
             .then(response => response.json())
             .then(data => {
@@ -72,8 +77,8 @@
                     }
                 };
                 if (channel.clearkeys) {
-                    const clearkeyId = Object.keys(channel.clearkeys)[0];
-                    const clearkey = channel.clearkeys[clearkeyId];
+                    const clearkeyId = channel.clearkeys.keyId;
+                    const clearkey = channel.clearkeys.key;
                     protData["org.w3.clearkey"]["clearkeys"][clearkeyId] = clearkey;
                 }
 
