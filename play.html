@@ -21,7 +21,7 @@
         const urlParams = new URLSearchParams(queryString);
         const channelId = urlParams.get('id');
 
-        fetch("https://universe-cors.deno.dev/https://universe-channels.deno.dev/channels.json")
+        fetch("https://universe-cors.deno.dev/https://universe-playlist.deno.dev/channels.json")
             .then(response => response.json())
             .then(data => {
                 const channel = data.data.channels.find(item => item.id === channelId);
