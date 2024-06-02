@@ -15,7 +15,7 @@
 <body>
     <div id="player"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.0.0/shaka-player.compiled.js"></script>
+    <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
     <script>
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
@@ -27,29 +27,43 @@
                 const channel = data.data.channels.find(item => item.id === channelId);
 
                 if (channel) {
-                    const player = new shaka.Player(document.getElementById('player'));
-                    player.configure({
-                        manifest: {
-                            dash: {
-                                clockSyncUri: channel.manifest_url,
-                                customScheme: {
-                                    schemeIdUri: 'urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed',
-                                    interpretContentProtection: function(node) {
-                                        if (node.getAttribute('value') == 'com.widevine.alpha') {
-                                            return 'com.widevine.alpha';
-                                        } else {
-                                            return '';
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                    const playerInstance = jwplayer("player").setup({
+                        controls: true,
+                        sharing: true,
+                        displaytitle: true,
+                        autostart: false,
+                        stretching: "exactfit",
+                        displaydescription: true,
+
+                        captions: {
+                            color: "#FFF",
+                            fontSize: 14,
+                            backgroundOpacity: 0,
+                            edgeStyle: "raised",
+                        },
+
+                        playlist: [
+                            {
+                                title: channel.name,
+                                description: "",
+                                image: channel.logo_url,
+                                sources: [
+                                    {
+                                        file: channel.manifest_url,
+                                        drm: {
+                                            clearkey: {
+                                                key: channel.clearkeys.key,
+                                                keyId: channel.clearkeys.keyId,
+                                            }
+                                        },
+                                    },
+                                ],
+                            },
+                        ],
                     });
 
-                    player.load(channel.manifest_url).then(() => {
+                    playerInstance.on('ready', () => {
                         console.log('Player ready');
-                    }).catch(error => {
-                        console.error('Error loading channel:', error);
                     });
                 } else {
                     console.error("Channel with ID", channelId, "not found");
