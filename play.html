@@ -15,7 +15,7 @@
         const urlParams = new URLSearchParams(queryString);
         const channelId = urlParams.get('id');
 
-        fetch("https://universe-cors.deno.dev/https://iptv-universe.vercel.app/api/getM3u")
+        fetch("https://universe-cors.deno.dev/https://iptv-universe.vercel.app/api/playlist.m3u")
             .then(response => response.text())
             .then(playlist => {
                 const channelURL = getChannelURL(playlist, channelId);
